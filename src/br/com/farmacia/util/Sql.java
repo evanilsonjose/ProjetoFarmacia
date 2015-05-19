@@ -24,9 +24,9 @@ public class Sql {
     public static final String INSERE_FORNECEDOR = "INSERT INTO fornecedor (nome_fornecedor, cnpj_fornecedor, endereco_fornecedor, telefone_fornecedor) VALUES (?,?,?,?)";
     public static final String REMOVE_FORNECEDOR = "DELETE FROM fornecedor WHERE cod_fornecedor = ?";
     public static final String ALTERAR_FORNECEDOR = "UPDATE fornecedor SET nome_funcionario = ?, cpnj_fornecedor = ?, endereco_fornecedor = ?, telefone_fornecedor = ?";
-    public static final String BUSCAR_FORNECEDOR_CODIGO = "SELECT cod_fornecedor nome_funcionario , cpnj_fornecedor, endereco_fornecedor , telefone_fornecedor FROM fornecedor WHERE cod_fornecedor = ?";
-    public static final String BUSCAR_FORNECEDOR_CNPJ = "SELECT cod_fornecedor nome_funcionario , cpnj_fornecedor, endereco_fornecedor , telefone_fornecedor FROM fornecedor WHERE cnpj_fornecedor = ?";
-    public static final String LISTAR_FORNECEDOR = "SELECT cod_fornecedor nome_funcionario , cpnj_fornecedor, endereco_fornecedor , telefone_fornecedor FROM fornecedor";
+    public static final String BUSCAR_FORNECEDOR_CODIGO = "SELECT cod_fornecedor, nome_funcionario , cpnj_fornecedor, endereco_fornecedor , telefone_fornecedor FROM fornecedor WHERE cod_fornecedor = ?";
+    public static final String BUSCAR_FORNECEDOR_CNPJ = "SELECT cod_fornecedor, nome_funcionario , cpnj_fornecedor, endereco_fornecedor , telefone_fornecedor FROM fornecedor WHERE cnpj_fornecedor = ?";
+    public static final String LISTAR_FORNECEDOR = "SELECT cod_fornecedor, nome_fornecedor, cnpj_fornecedor, endereco_fornecedor , telefone_fornecedor FROM fornecedor";
     // fim - query fornecedor
 
     // inicio - query Medicamento

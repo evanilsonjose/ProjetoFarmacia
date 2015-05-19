@@ -116,7 +116,7 @@ public class FornecedorDAO {
                 Fornecedor fornecedor = new Fornecedor();
                 fornecedor.setCodigo(rs.getInt("cod_fornecedor"));
                 fornecedor.setNome(rs.getString("nome_fornecedor"));
-                fornecedor.setCNPJ(rs.getString("rg_fornecedor"));
+                fornecedor.setCNPJ(rs.getString("cnpj_fornecedor"));
                 fornecedor.setEndereco(rs.getString("endereco_fornecedor"));
                 fornecedor.setTelefone(rs.getString("telefone_fornecedor"));
                 fornecedores.add(fornecedor);
