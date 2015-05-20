@@ -91,6 +91,11 @@ public class TelaConsultaCliente extends javax.swing.JFrame {
         jButtonCancelarCliente.setText("Cancelar");
 
         jComboBoxCodigoCpf.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Código", "CPF" }));
+        jComboBoxCodigoCpf.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBoxCodigoCpfItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelConsultaClienteLayout = new javax.swing.GroupLayout(jPanelConsultaCliente);
         jPanelConsultaCliente.setLayout(jPanelConsultaClienteLayout);
@@ -230,6 +235,17 @@ public class TelaConsultaCliente extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButtonConsultarClienteActionPerformed
+
+    private void jComboBoxCodigoCpfItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxCodigoCpfItemStateChanged
+        // TODO add your handling code here:
+        jTextFieldCodigoCpfCliente.setText("");
+        jTextFieldNomeCliente.setText("");
+        jTextFieldRgCliente.setText("");
+        jTextFieldCpfCliente.setText("");
+        jTextFieldDataNascCliente.setText("");
+        jTextFieldEnderecoCliente.setText("");
+        jTextFieldTelefoneCliente.setText("");
+    }//GEN-LAST:event_jComboBoxCodigoCpfItemStateChanged
 
     /**
      * @param args the command line arguments
