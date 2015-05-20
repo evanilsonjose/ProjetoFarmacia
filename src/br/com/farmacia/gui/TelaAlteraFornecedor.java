@@ -41,6 +41,7 @@ public class TelaAlteraFornecedor extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**

@@ -35,12 +35,28 @@ public class TelaSistema extends javax.swing.JFrame {
         jMenuItemSair = new javax.swing.JMenuItem();
         jMenuCliente = new javax.swing.JMenu();
         jMenuItemCadCliente = new javax.swing.JMenuItem();
+        jMenuItemCadFornecedor = new javax.swing.JMenuItem();
+        jMenuItemCadFuncionario = new javax.swing.JMenuItem();
+        jMenuItemCadMedicamento = new javax.swing.JMenuItem();
+        jMenuItemCadEquipamento = new javax.swing.JMenuItem();
         jMenuAlterar = new javax.swing.JMenu();
         jMenuItemAltCliente = new javax.swing.JMenuItem();
+        jMenuItemAltFornecedor = new javax.swing.JMenuItem();
+        jMenuItemAltFuncionario = new javax.swing.JMenuItem();
+        jMenuItemAltMedicamento = new javax.swing.JMenuItem();
+        jMenuItemAltEquipamento = new javax.swing.JMenuItem();
         jMenuRemover = new javax.swing.JMenu();
         jMenuItemRemCliente = new javax.swing.JMenuItem();
+        jMenuItemRemFornecedor = new javax.swing.JMenuItem();
+        jMenuItemRemFuncionario = new javax.swing.JMenuItem();
+        jMenuItemRemMedicamento = new javax.swing.JMenuItem();
+        jMenuItemRemEquipamento = new javax.swing.JMenuItem();
         jMenuConsultar = new javax.swing.JMenu();
         jMenuItemConCliente = new javax.swing.JMenuItem();
+        jMenuItemConFornecedor = new javax.swing.JMenuItem();
+        jMenuItemConFuncionario = new javax.swing.JMenuItem();
+        jMenuItemConMedicamento = new javax.swing.JMenuItem();
+        jMenuItemConEquipamento = new javax.swing.JMenuItem();
         jMenuAjuda = new javax.swing.JMenu();
         jMenuSobre = new javax.swing.JMenuItem();
 
@@ -83,13 +99,82 @@ public class TelaSistema extends javax.swing.JFrame {
         });
         jMenuCliente.add(jMenuItemCadCliente);
 
+        jMenuItemCadFornecedor.setText("Fornecedor");
+        jMenuItemCadFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCadFornecedorActionPerformed(evt);
+            }
+        });
+        jMenuCliente.add(jMenuItemCadFornecedor);
+
+        jMenuItemCadFuncionario.setText("Funcionario");
+        jMenuItemCadFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCadFuncionarioActionPerformed(evt);
+            }
+        });
+        jMenuCliente.add(jMenuItemCadFuncionario);
+
+        jMenuItemCadMedicamento.setText("Medicamento");
+        jMenuItemCadMedicamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCadMedicamentoActionPerformed(evt);
+            }
+        });
+        jMenuCliente.add(jMenuItemCadMedicamento);
+
+        jMenuItemCadEquipamento.setText("Equipamento");
+        jMenuItemCadEquipamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCadEquipamentoActionPerformed(evt);
+            }
+        });
+        jMenuCliente.add(jMenuItemCadEquipamento);
+
         jMenuBarSistema.add(jMenuCliente);
 
         jMenuAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/farmacia/resources/ico/page_edit.png"))); // NOI18N
         jMenuAlterar.setText("Alterar");
 
         jMenuItemAltCliente.setText("Cliente");
+        jMenuItemAltCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAltClienteActionPerformed(evt);
+            }
+        });
         jMenuAlterar.add(jMenuItemAltCliente);
+
+        jMenuItemAltFornecedor.setText("Fornecedor");
+        jMenuItemAltFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAltFornecedorActionPerformed(evt);
+            }
+        });
+        jMenuAlterar.add(jMenuItemAltFornecedor);
+
+        jMenuItemAltFuncionario.setText("Funcionario");
+        jMenuItemAltFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAltFuncionarioActionPerformed(evt);
+            }
+        });
+        jMenuAlterar.add(jMenuItemAltFuncionario);
+
+        jMenuItemAltMedicamento.setText("Medicamento");
+        jMenuItemAltMedicamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAltMedicamentoActionPerformed(evt);
+            }
+        });
+        jMenuAlterar.add(jMenuItemAltMedicamento);
+
+        jMenuItemAltEquipamento.setText("Equipamento");
+        jMenuItemAltEquipamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAltEquipamentoActionPerformed(evt);
+            }
+        });
+        jMenuAlterar.add(jMenuItemAltEquipamento);
 
         jMenuBarSistema.add(jMenuAlterar);
 
@@ -97,7 +182,44 @@ public class TelaSistema extends javax.swing.JFrame {
         jMenuRemover.setText("Remover");
 
         jMenuItemRemCliente.setText("Cliente");
+        jMenuItemRemCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemRemClienteActionPerformed(evt);
+            }
+        });
         jMenuRemover.add(jMenuItemRemCliente);
+
+        jMenuItemRemFornecedor.setText("Fornecedor");
+        jMenuItemRemFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemRemFornecedorActionPerformed(evt);
+            }
+        });
+        jMenuRemover.add(jMenuItemRemFornecedor);
+
+        jMenuItemRemFuncionario.setText("Funcionario");
+        jMenuItemRemFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemRemFuncionarioActionPerformed(evt);
+            }
+        });
+        jMenuRemover.add(jMenuItemRemFuncionario);
+
+        jMenuItemRemMedicamento.setText("Medicamento");
+        jMenuItemRemMedicamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemRemMedicamentoActionPerformed(evt);
+            }
+        });
+        jMenuRemover.add(jMenuItemRemMedicamento);
+
+        jMenuItemRemEquipamento.setText("Equipamento");
+        jMenuItemRemEquipamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemRemEquipamentoActionPerformed(evt);
+            }
+        });
+        jMenuRemover.add(jMenuItemRemEquipamento);
 
         jMenuBarSistema.add(jMenuRemover);
 
@@ -105,7 +227,44 @@ public class TelaSistema extends javax.swing.JFrame {
         jMenuConsultar.setText("Consultar");
 
         jMenuItemConCliente.setText("Cliente");
+        jMenuItemConCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemConClienteActionPerformed(evt);
+            }
+        });
         jMenuConsultar.add(jMenuItemConCliente);
+
+        jMenuItemConFornecedor.setText("Fornecedor");
+        jMenuItemConFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemConFornecedorActionPerformed(evt);
+            }
+        });
+        jMenuConsultar.add(jMenuItemConFornecedor);
+
+        jMenuItemConFuncionario.setText("Funcionario");
+        jMenuItemConFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemConFuncionarioActionPerformed(evt);
+            }
+        });
+        jMenuConsultar.add(jMenuItemConFuncionario);
+
+        jMenuItemConMedicamento.setText("Medicamento");
+        jMenuItemConMedicamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemConMedicamentoActionPerformed(evt);
+            }
+        });
+        jMenuConsultar.add(jMenuItemConMedicamento);
+
+        jMenuItemConEquipamento.setText("Equipamento");
+        jMenuItemConEquipamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemConEquipamentoActionPerformed(evt);
+            }
+        });
+        jMenuConsultar.add(jMenuItemConEquipamento);
 
         jMenuBarSistema.add(jMenuConsultar);
 
@@ -144,9 +303,123 @@ public class TelaSistema extends javax.swing.JFrame {
 
     private void jMenuItemCadClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadClienteActionPerformed
         // TODO add your handling code here:
-        TelaCadastroCliente telaCadCliente = new TelaCadastroCliente();
-        telaCadCliente.setVisible(true);
+        TelaCadastroCliente telaCadastroCliente = new TelaCadastroCliente();
+        telaCadastroCliente.setVisible(true);
     }//GEN-LAST:event_jMenuItemCadClienteActionPerformed
+
+    private void jMenuItemCadFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadFornecedorActionPerformed
+        // TODO add your handling code here:
+        TelaCadastroFornecedor telaCadastroFornecedor = new TelaCadastroFornecedor();
+        telaCadastroFornecedor.setVisible(true);
+    }//GEN-LAST:event_jMenuItemCadFornecedorActionPerformed
+
+    private void jMenuItemCadFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadFuncionarioActionPerformed
+        // TODO add your handling code here:
+        TelaCadastroFuncionario telaCadastroFuncionario = new TelaCadastroFuncionario();
+        telaCadastroFuncionario.setVisible(true);
+    }//GEN-LAST:event_jMenuItemCadFuncionarioActionPerformed
+
+    private void jMenuItemCadMedicamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadMedicamentoActionPerformed
+        // TODO add your handling code here:
+        TelaCadastroMedicamento telaCadastroMedicamento = new TelaCadastroMedicamento();
+        telaCadastroMedicamento.setVisible(true);
+    }//GEN-LAST:event_jMenuItemCadMedicamentoActionPerformed
+
+    private void jMenuItemCadEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadEquipamentoActionPerformed
+        // TODO add your handling code here:
+        TelaCadastroEquipamento telaCadastroEquipamento = new TelaCadastroEquipamento();
+        telaCadastroEquipamento.setVisible(true);
+    }//GEN-LAST:event_jMenuItemCadEquipamentoActionPerformed
+
+    private void jMenuItemAltClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAltClienteActionPerformed
+        // TODO add your handling code here:
+        TelaAlteraCliente telaAlteraCliente = new TelaAlteraCliente();
+        telaAlteraCliente.setVisible(true);
+    }//GEN-LAST:event_jMenuItemAltClienteActionPerformed
+
+    private void jMenuItemAltFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAltFornecedorActionPerformed
+        // TODO add your handling code here:
+        TelaAlteraFornecedor telaAlteraFornecedor = new TelaAlteraFornecedor();
+        telaAlteraFornecedor.setVisible(true);
+    }//GEN-LAST:event_jMenuItemAltFornecedorActionPerformed
+
+    private void jMenuItemAltFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAltFuncionarioActionPerformed
+        // TODO add your handling code here:
+        TelaAlteraFuncionario telaAlteraFuncionario = new TelaAlteraFuncionario();
+        telaAlteraFuncionario.setVisible(true);
+    }//GEN-LAST:event_jMenuItemAltFuncionarioActionPerformed
+
+    private void jMenuItemAltMedicamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAltMedicamentoActionPerformed
+        // TODO add your handling code here:
+        TelaAlteraMedicamento telaAlteraMedicamento = new TelaAlteraMedicamento();
+        telaAlteraMedicamento.setVisible(true);
+    }//GEN-LAST:event_jMenuItemAltMedicamentoActionPerformed
+
+    private void jMenuItemAltEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAltEquipamentoActionPerformed
+        // TODO add your handling code here:
+        TelaAlteraEquipamento telaAlteraEquipamento = new TelaAlteraEquipamento();
+        telaAlteraEquipamento.setVisible(true);
+    }//GEN-LAST:event_jMenuItemAltEquipamentoActionPerformed
+
+    private void jMenuItemRemClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemRemClienteActionPerformed
+        // TODO add your handling code here:
+        TelaRemoveCliente telaRemoveCliente = new TelaRemoveCliente();
+        telaRemoveCliente.setVisible(true);
+    }//GEN-LAST:event_jMenuItemRemClienteActionPerformed
+
+    private void jMenuItemRemFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemRemFornecedorActionPerformed
+        // TODO add your handling code here:
+        TelaRemoveFornecedor telaRemoveFornecedor = new TelaRemoveFornecedor();
+        telaRemoveFornecedor.setVisible(true);
+    }//GEN-LAST:event_jMenuItemRemFornecedorActionPerformed
+
+    private void jMenuItemRemFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemRemFuncionarioActionPerformed
+        // TODO add your handling code here:
+        TelaRemoveFuncionario telaRemoveFuncionario = new TelaRemoveFuncionario();
+        telaRemoveFuncionario.setVisible(true);
+    }//GEN-LAST:event_jMenuItemRemFuncionarioActionPerformed
+
+    private void jMenuItemRemMedicamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemRemMedicamentoActionPerformed
+        // TODO add your handling code here:
+        TelaRemoveMedicamento telaRemoveMedicamento = new TelaRemoveMedicamento();
+        telaRemoveMedicamento.setVisible(true);
+    }//GEN-LAST:event_jMenuItemRemMedicamentoActionPerformed
+
+    private void jMenuItemRemEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemRemEquipamentoActionPerformed
+        // TODO add your handling code here:
+        TelaRemoveEquipamento telaRemoveEquipamento = new TelaRemoveEquipamento();
+        telaRemoveEquipamento.setVisible(true);
+    }//GEN-LAST:event_jMenuItemRemEquipamentoActionPerformed
+
+    private void jMenuItemConClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConClienteActionPerformed
+        // TODO add your handling code here:
+        TelaConsultaCliente telaConsultaCliente = new TelaConsultaCliente();
+        telaConsultaCliente.setVisible(true);
+    }//GEN-LAST:event_jMenuItemConClienteActionPerformed
+
+    private void jMenuItemConFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConFornecedorActionPerformed
+        // TODO add your handling code here:
+        TelaConsultaFornecedor telaConsultaFornecedor = new TelaConsultaFornecedor();
+        telaConsultaFornecedor.setVisible(true);
+    }//GEN-LAST:event_jMenuItemConFornecedorActionPerformed
+
+    private void jMenuItemConFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConFuncionarioActionPerformed
+        // TODO add your handling code here:
+        TelaConsultaFuncionario telaConsultaFuncionario = new TelaConsultaFuncionario();
+        telaConsultaFuncionario.setVisible(true);
+    }//GEN-LAST:event_jMenuItemConFuncionarioActionPerformed
+
+    private void jMenuItemConMedicamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConMedicamentoActionPerformed
+        // TODO add your handling code here:
+        TelaConsultaMedicamento telaConsultaMedicamento = new TelaConsultaMedicamento();
+        telaConsultaMedicamento.setVisible(true);
+    }//GEN-LAST:event_jMenuItemConMedicamentoActionPerformed
+
+    private void jMenuItemConEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConEquipamentoActionPerformed
+        // TODO add your handling code here:
+        TelaConsultaEquipamento telaConsultaEquipamento = new TelaConsultaEquipamento();
+        telaConsultaEquipamento.setVisible(true);
+    }//GEN-LAST:event_jMenuItemConEquipamentoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,9 +465,25 @@ public class TelaSistema extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuCliente;
     private javax.swing.JMenu jMenuConsultar;
     private javax.swing.JMenuItem jMenuItemAltCliente;
+    private javax.swing.JMenuItem jMenuItemAltEquipamento;
+    private javax.swing.JMenuItem jMenuItemAltFornecedor;
+    private javax.swing.JMenuItem jMenuItemAltFuncionario;
+    private javax.swing.JMenuItem jMenuItemAltMedicamento;
     private javax.swing.JMenuItem jMenuItemCadCliente;
+    private javax.swing.JMenuItem jMenuItemCadEquipamento;
+    private javax.swing.JMenuItem jMenuItemCadFornecedor;
+    private javax.swing.JMenuItem jMenuItemCadFuncionario;
+    private javax.swing.JMenuItem jMenuItemCadMedicamento;
     private javax.swing.JMenuItem jMenuItemConCliente;
+    private javax.swing.JMenuItem jMenuItemConEquipamento;
+    private javax.swing.JMenuItem jMenuItemConFornecedor;
+    private javax.swing.JMenuItem jMenuItemConFuncionario;
+    private javax.swing.JMenuItem jMenuItemConMedicamento;
     private javax.swing.JMenuItem jMenuItemRemCliente;
+    private javax.swing.JMenuItem jMenuItemRemEquipamento;
+    private javax.swing.JMenuItem jMenuItemRemFornecedor;
+    private javax.swing.JMenuItem jMenuItemRemFuncionario;
+    private javax.swing.JMenuItem jMenuItemRemMedicamento;
     private javax.swing.JMenuItem jMenuItemSair;
     private javax.swing.JMenu jMenuRemover;
     private javax.swing.JMenuItem jMenuSobre;

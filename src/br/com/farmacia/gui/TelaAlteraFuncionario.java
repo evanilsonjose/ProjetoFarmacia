@@ -41,6 +41,7 @@ public class TelaAlteraFuncionario extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
