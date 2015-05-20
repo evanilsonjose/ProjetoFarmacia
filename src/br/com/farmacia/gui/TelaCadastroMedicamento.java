@@ -5,17 +5,37 @@
  */
 package br.com.farmacia.gui;
 
+import br.com.farmacia.beans.Fornecedor;
+import br.com.farmacia.beans.Medicamento;
+import br.com.farmacia.dao.FornecedorDAO;
+import br.com.farmacia.dao.MedicamentoDAO;
+import br.com.farmacia.util.ComboBoxItem;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Evanilson
  */
 public class TelaCadastroMedicamento extends javax.swing.JFrame {
 
+    FornecedorDAO funcaoFornecedor = new FornecedorDAO();
+    List<Fornecedor> fornecedores = new ArrayList<>();
+
     /**
      * Creates new form TelaCadastroMedicamento
      */
     public TelaCadastroMedicamento() {
         initComponents();
+
+        try {
+            fornecedores = funcaoFornecedor.listaFornecedores();
+            for (Fornecedor fornecedor : fornecedores) {
+                jComboBoxFornecedorMedicamento.addItem(new ComboBoxItem(fornecedor.getCodigo(), fornecedor.getNome()));
+            }
+        } catch (Exception e) {
+        }
     }
 
     /**
@@ -27,21 +47,186 @@ public class TelaCadastroMedicamento extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabelNomeMedicamento = new javax.swing.JLabel();
+        jTextFieldNomeMedicamento = new javax.swing.JTextField();
+        jLabelPrecoCustoMedicamento = new javax.swing.JLabel();
+        jTextFieldPrecoCustoMedicamento = new javax.swing.JTextField();
+        jLabelPrecoVendaMedicamento = new javax.swing.JLabel();
+        jTextFieldPrecoVendaMedicamento = new javax.swing.JTextField();
+        jLabelQuantidadeEstoqueMedicamento = new javax.swing.JLabel();
+        jTextFieldQuantidadeEstoqueMedicamento = new javax.swing.JTextField();
+        jLabelFornecedorMedicamento = new javax.swing.JLabel();
+        jLabelGenericoMedicamento = new javax.swing.JLabel();
+        jComboBoxGenericoMedicamento = new javax.swing.JComboBox();
+        jLabelPrescricaoMedicaMedicamento = new javax.swing.JLabel();
+        jComboBoxPrescricaoMedicaMedicamento = new javax.swing.JComboBox();
+        jLabelCategoriaMedicamento = new javax.swing.JLabel();
+        jTextFieldCategoriaMedicamento = new javax.swing.JTextField();
+        jButtonCadastrarMedicamento = new javax.swing.JButton();
+        jComboBoxFornecedorMedicamento = new javax.swing.JComboBox();
+        jLabelCadastroMedicamento = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabelNomeMedicamento.setText("Nome:");
+
+        jLabelPrecoCustoMedicamento.setText("Preço de Custo:");
+
+        jLabelPrecoVendaMedicamento.setText("Preço de Venda:");
+
+        jLabelQuantidadeEstoqueMedicamento.setText("Quantidade em Estoque:");
+
+        jLabelFornecedorMedicamento.setText("Fornecedor:");
+
+        jLabelGenericoMedicamento.setText("Genérico:");
+
+        jComboBoxGenericoMedicamento.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não", "Sim" }));
+
+        jLabelPrescricaoMedicaMedicamento.setText("Prescrição Médica:");
+
+        jComboBoxPrescricaoMedicaMedicamento.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Não", "Sim" }));
+
+        jLabelCategoriaMedicamento.setText("Categoria:");
+
+        jButtonCadastrarMedicamento.setText("Cadastrar");
+        jButtonCadastrarMedicamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCadastrarMedicamentoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabelCategoriaMedicamento)
+                    .addComponent(jLabelPrescricaoMedicaMedicamento)
+                    .addComponent(jLabelGenericoMedicamento)
+                    .addComponent(jLabelFornecedorMedicamento)
+                    .addComponent(jLabelQuantidadeEstoqueMedicamento)
+                    .addComponent(jLabelPrecoVendaMedicamento)
+                    .addComponent(jLabelPrecoCustoMedicamento)
+                    .addComponent(jLabelNomeMedicamento))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextFieldNomeMedicamento, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jTextFieldPrecoVendaMedicamento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                        .addComponent(jTextFieldPrecoCustoMedicamento, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(jTextFieldQuantidadeEstoqueMedicamento, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jComboBoxPrescricaoMedicaMedicamento, javax.swing.GroupLayout.Alignment.LEADING, 0, 55, Short.MAX_VALUE)
+                        .addComponent(jComboBoxGenericoMedicamento, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jComboBoxFornecedorMedicamento, javax.swing.GroupLayout.Alignment.LEADING, 0, 150, Short.MAX_VALUE)
+                        .addComponent(jTextFieldCategoriaMedicamento, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addContainerGap(221, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonCadastrarMedicamento)
+                .addGap(38, 38, 38))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelNomeMedicamento)
+                    .addComponent(jTextFieldNomeMedicamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelPrecoCustoMedicamento)
+                    .addComponent(jTextFieldPrecoCustoMedicamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelPrecoVendaMedicamento)
+                    .addComponent(jTextFieldPrecoVendaMedicamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelQuantidadeEstoqueMedicamento)
+                    .addComponent(jTextFieldQuantidadeEstoqueMedicamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabelFornecedorMedicamento)
+                    .addComponent(jComboBoxFornecedorMedicamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelGenericoMedicamento)
+                    .addComponent(jComboBoxGenericoMedicamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelPrescricaoMedicaMedicamento)
+                    .addComponent(jComboBoxPrescricaoMedicaMedicamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelCategoriaMedicamento)
+                    .addComponent(jTextFieldCategoriaMedicamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addComponent(jButtonCadastrarMedicamento)
+                .addGap(21, 21, 21))
+        );
+
+        jLabelCadastroMedicamento.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabelCadastroMedicamento.setText("Cadastro de Medicamento");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(219, 219, 219)
+                .addComponent(jLabelCadastroMedicamento)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelCadastroMedicamento)
+                .addGap(29, 29, 29)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonCadastrarMedicamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarMedicamentoActionPerformed
+        // TODO add your handling code here:
+
+        String nome = jTextFieldNomeMedicamento.getText();
+        double precoCusto = Double.parseDouble(jTextFieldPrecoCustoMedicamento.getText());
+        double precoVenda = Double.parseDouble(jTextFieldPrecoVendaMedicamento.getText());
+        int qtdEstoque = Integer.parseInt(jTextFieldQuantidadeEstoqueMedicamento.getText());
+        ComboBoxItem comboBoxItem = (ComboBoxItem) jComboBoxFornecedorMedicamento.getSelectedItem();
+        int codFornecedor = comboBoxItem.getCodigo();
+        String nomeFornecedor = comboBoxItem.getNome();
+        Fornecedor fornecedor = new Fornecedor();
+        fornecedor.setCodigo(codFornecedor);
+        fornecedor.setNome(nomeFornecedor);
+        String generico = jComboBoxGenericoMedicamento.getSelectedItem().toString();
+        String prescricao = jComboBoxPrescricaoMedicaMedicamento.getSelectedItem().toString();
+        String categoria = jTextFieldCategoriaMedicamento.getText();
+
+        Medicamento medicamento = new Medicamento(0, nome, precoCusto, precoVenda, qtdEstoque, fornecedor, generico, prescricao, categoria);
+        MedicamentoDAO funcaoMedicamento = new MedicamentoDAO();
+        try {
+            funcaoMedicamento.insereMedicamento(medicamento);
+            JOptionPane.showMessageDialog(null, "Medicamento cadastrado com sucesso!");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+
+    }//GEN-LAST:event_jButtonCadastrarMedicamentoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +264,24 @@ public class TelaCadastroMedicamento extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonCadastrarMedicamento;
+    private javax.swing.JComboBox jComboBoxFornecedorMedicamento;
+    private javax.swing.JComboBox jComboBoxGenericoMedicamento;
+    private javax.swing.JComboBox jComboBoxPrescricaoMedicaMedicamento;
+    private javax.swing.JLabel jLabelCadastroMedicamento;
+    private javax.swing.JLabel jLabelCategoriaMedicamento;
+    private javax.swing.JLabel jLabelFornecedorMedicamento;
+    private javax.swing.JLabel jLabelGenericoMedicamento;
+    private javax.swing.JLabel jLabelNomeMedicamento;
+    private javax.swing.JLabel jLabelPrecoCustoMedicamento;
+    private javax.swing.JLabel jLabelPrecoVendaMedicamento;
+    private javax.swing.JLabel jLabelPrescricaoMedicaMedicamento;
+    private javax.swing.JLabel jLabelQuantidadeEstoqueMedicamento;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextFieldCategoriaMedicamento;
+    private javax.swing.JTextField jTextFieldNomeMedicamento;
+    private javax.swing.JTextField jTextFieldPrecoCustoMedicamento;
+    private javax.swing.JTextField jTextFieldPrecoVendaMedicamento;
+    private javax.swing.JTextField jTextFieldQuantidadeEstoqueMedicamento;
     // End of variables declaration//GEN-END:variables
 }
