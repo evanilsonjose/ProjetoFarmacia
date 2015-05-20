@@ -5,17 +5,35 @@
  */
 package br.com.farmacia.gui;
 
+import br.com.farmacia.beans.Equipamento;
+import br.com.farmacia.beans.Fornecedor;
+import br.com.farmacia.dao.EquipamentoDAO;
+import br.com.farmacia.dao.FornecedorDAO;
+import br.com.farmacia.util.ComboBoxItem;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Evanilson
  */
 public class TelaCadastroEquipamento extends javax.swing.JFrame {
-
+    
+    FornecedorDAO funcaoFornecedor = new FornecedorDAO();
+    List<Fornecedor> fornecedores = new ArrayList<>();
     /**
      * Creates new form TelaCadastroEquipamento
      */
     public TelaCadastroEquipamento() {
         initComponents();
+        try {
+            fornecedores = funcaoFornecedor.listaFornecedores();
+            for (Fornecedor fornecedor : fornecedores) {
+                jComboBoxFornecedorEquipamento.addItem(new ComboBoxItem(fornecedor.getCodigo(), fornecedor.getNome()));
+            }
+        } catch (Exception e) {
+        }
     }
 
     /**
@@ -39,6 +57,8 @@ public class TelaCadastroEquipamento extends javax.swing.JFrame {
         jButtonCadastrar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jComboBoxModoOperacao = new javax.swing.JComboBox();
+        jLabelFornecedorEquipamento = new javax.swing.JLabel();
+        jComboBoxFornecedorEquipamento = new javax.swing.JComboBox();
         jLabelTituloTela = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,10 +75,17 @@ public class TelaCadastroEquipamento extends javax.swing.JFrame {
         jLabel4.setText("Quantidade em Estoque:");
 
         jButtonCadastrar.setText("Cadastrar");
+        jButtonCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCadastrarActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Modo de Operação");
 
         jComboBoxModoOperacao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Manual", "Bateria", "Elétrico" }));
+
+        jLabelFornecedorEquipamento.setText("Fornecedor:");
 
         javax.swing.GroupLayout jPanelCadastroEquipamentoLayout = new javax.swing.GroupLayout(jPanelCadastroEquipamento);
         jPanelCadastroEquipamento.setLayout(jPanelCadastroEquipamentoLayout);
@@ -71,6 +98,7 @@ public class TelaCadastroEquipamento extends javax.swing.JFrame {
             .addGroup(jPanelCadastroEquipamentoLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addGroup(jPanelCadastroEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabelFornecedorEquipamento)
                     .addComponent(jLabel5)
                     .addComponent(jLabel4)
                     .addComponent(jLabel3)
@@ -78,12 +106,14 @@ public class TelaCadastroEquipamento extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelCadastroEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBoxModoOperacao, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldNomeEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanelCadastroEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jTextFieldQtdEstoque, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
                         .addComponent(jTextFieldPrecoDeCusto, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jTextFieldPrecoDeVenda, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addComponent(jTextFieldPrecoDeVenda, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addGroup(jPanelCadastroEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jComboBoxFornecedorEquipamento, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jComboBoxModoOperacao, javax.swing.GroupLayout.Alignment.LEADING, 0, 109, Short.MAX_VALUE)))
                 .addContainerGap(172, Short.MAX_VALUE))
         );
         jPanelCadastroEquipamentoLayout.setVerticalGroup(
@@ -109,7 +139,11 @@ public class TelaCadastroEquipamento extends javax.swing.JFrame {
                 .addGroup(jPanelCadastroEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(jComboBoxModoOperacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanelCadastroEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelFornecedorEquipamento)
+                    .addComponent(jComboBoxFornecedorEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addComponent(jButtonCadastrar)
                 .addGap(40, 40, 40))
         );
@@ -137,12 +171,36 @@ public class TelaCadastroEquipamento extends javax.swing.JFrame {
                 .addComponent(jLabelTituloTela)
                 .addGap(18, 18, 18)
                 .addComponent(jPanelCadastroEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
+        // TODO add your handling code here:
+        String nome = jTextFieldNomeEquipamento.getText();
+        double precoVenda = Double.parseDouble(jTextFieldPrecoDeVenda.getText());
+        double precoCusto = Double.parseDouble(jTextFieldPrecoDeCusto.getText());
+        int qtdEstoque = Integer.parseInt(jTextFieldQtdEstoque.getText());
+        String modoOperacao = jComboBoxModoOperacao.getSelectedItem().toString();
+        ComboBoxItem comboBoxItem = (ComboBoxItem)jComboBoxFornecedorEquipamento.getSelectedItem();
+        int codFornecedor = comboBoxItem.getCodigo();
+        String nomeFornecedor = comboBoxItem.getNome();
+        Fornecedor fornecedor = new Fornecedor();
+        fornecedor.setCodigo(codFornecedor);
+        fornecedor.setNome(nomeFornecedor);
+        Equipamento equipamento = new Equipamento(0, nome, precoCusto, precoVenda, qtdEstoque, fornecedor, modoOperacao);
+        
+        EquipamentoDAO funcaoEquipamento = new EquipamentoDAO();
+        try {
+            funcaoEquipamento.insereEquipamento(equipamento);
+            JOptionPane.showMessageDialog(null, "Equipamento cadastrado com sucesso!");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_jButtonCadastrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,12 +239,14 @@ public class TelaCadastroEquipamento extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCadastrar;
+    private javax.swing.JComboBox jComboBoxFornecedorEquipamento;
     private javax.swing.JComboBox jComboBoxModoOperacao;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabelFornecedorEquipamento;
     private javax.swing.JLabel jLabelTituloTela;
     private javax.swing.JPanel jPanelCadastroEquipamento;
     private javax.swing.JTextField jTextFieldNomeEquipamento;
