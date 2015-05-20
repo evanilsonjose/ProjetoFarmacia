@@ -48,7 +48,7 @@ public class FornecedorDAO {
             while (rs.next()) {
                 fornecedor.setCodigo(rs.getInt("cod_fornecedor"));
                 fornecedor.setNome(rs.getString("nome_fornecedor"));
-                fornecedor.setCNPJ(rs.getString("rg_fornecedor"));
+                fornecedor.setCNPJ(rs.getString("cnpj_fornecedor"));
                 fornecedor.setEndereco(rs.getString("endereco_fornecedor"));
                 fornecedor.setTelefone(rs.getString("telefone_fornecedor"));
             }
@@ -74,8 +74,8 @@ public class FornecedorDAO {
             while (rs.next()) {
                 fornecedor.setCodigo(rs.getInt("cod_fornecedor"));
                 fornecedor.setNome(rs.getString("nome_fornecedor"));
-                fornecedor.setCNPJ(rs.getString("rg_fornecedor"));
-                fornecedor.setEndereco(rs.getString("BUSCAR_FORMECEDOR_cnpjendereco_fornecedor"));
+                fornecedor.setCNPJ(rs.getString("cnpj_fornecedor"));
+                fornecedor.setEndereco(rs.getString("endereco_fornecedor"));
                 fornecedor.setTelefone(rs.getString("telefone_fornecedor"));
 
             }
