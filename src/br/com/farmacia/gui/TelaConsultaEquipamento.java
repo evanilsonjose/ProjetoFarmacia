@@ -27,20 +27,136 @@ public class TelaConsultaEquipamento extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanelConsultaEquipamento = new javax.swing.JPanel();
+        jLabelCod = new javax.swing.JLabel();
+        jTextFieldCodEquipamento = new javax.swing.JTextField();
+        jLabelQtdEstoque = new javax.swing.JLabel();
+        jTextFieldQtdEstoque = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jTextFieldPrecoVenda = new javax.swing.JTextField();
+        jLabelPrecoCusto = new javax.swing.JLabel();
+        jTextFieldPrecoCusto = new javax.swing.JTextField();
+        jLabelModoOperacao = new javax.swing.JLabel();
+        jTextFieldModoOperacao = new javax.swing.JTextField();
+        jButtonConsulta = new javax.swing.JButton();
+        jButtonLimpar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jTextFieldNomeFornecedor = new javax.swing.JTextField();
+        jLabelTítulo = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanelConsultaEquipamento.setBackground(new java.awt.Color(204, 204, 204));
+        jPanelConsultaEquipamento.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabelCod.setText("Código do Equipamento:");
+
+        jLabelQtdEstoque.setText("Quantidade em estoque:");
+
+        jLabel3.setText("Custo de Venda:");
+
+        jLabelPrecoCusto.setText("Preço de Custo:");
+
+        jLabelModoOperacao.setText("Modo de Opreração:");
+
+        jButtonConsulta.setText("Consultar");
+
+        jButtonLimpar.setText("Limpar");
+
+        jLabel1.setText("Nome do Fornecedor:");
+
+        javax.swing.GroupLayout jPanelConsultaEquipamentoLayout = new javax.swing.GroupLayout(jPanelConsultaEquipamento);
+        jPanelConsultaEquipamento.setLayout(jPanelConsultaEquipamentoLayout);
+        jPanelConsultaEquipamentoLayout.setHorizontalGroup(
+            jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelConsultaEquipamentoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonConsulta)
+                .addGap(44, 44, 44))
+            .addGroup(jPanelConsultaEquipamentoLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabelModoOperacao)
+                    .addComponent(jLabelPrecoCusto)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabelQtdEstoque)
+                    .addComponent(jLabelCod))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextFieldCodEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jTextFieldPrecoVenda, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
+                        .addComponent(jTextFieldPrecoCusto, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jTextFieldQtdEstoque, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jTextFieldNomeFornecedor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                        .addComponent(jTextFieldModoOperacao, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addContainerGap(258, Short.MAX_VALUE))
+        );
+        jPanelConsultaEquipamentoLayout.setVerticalGroup(
+            jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelConsultaEquipamentoLayout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextFieldCodEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelCod))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelQtdEstoque)
+                    .addComponent(jTextFieldQtdEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jTextFieldPrecoVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelPrecoCusto)
+                    .addComponent(jTextFieldPrecoCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelModoOperacao)
+                    .addComponent(jTextFieldModoOperacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jTextFieldNomeFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonConsulta)
+                    .addComponent(jButtonLimpar))
+                .addGap(30, 30, 30))
+        );
+
+        jLabelTítulo.setText("Consultar Equipamento");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(223, 223, 223)
+                .addComponent(jLabelTítulo)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanelConsultaEquipamento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabelTítulo)
+                .addGap(18, 18, 18)
+                .addComponent(jPanelConsultaEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -79,5 +195,21 @@ public class TelaConsultaEquipamento extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonConsulta;
+    private javax.swing.JButton jButtonLimpar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabelCod;
+    private javax.swing.JLabel jLabelModoOperacao;
+    private javax.swing.JLabel jLabelPrecoCusto;
+    private javax.swing.JLabel jLabelQtdEstoque;
+    private javax.swing.JLabel jLabelTítulo;
+    private javax.swing.JPanel jPanelConsultaEquipamento;
+    private javax.swing.JTextField jTextFieldCodEquipamento;
+    private javax.swing.JTextField jTextFieldModoOperacao;
+    private javax.swing.JTextField jTextFieldNomeFornecedor;
+    private javax.swing.JTextField jTextFieldPrecoCusto;
+    private javax.swing.JTextField jTextFieldPrecoVenda;
+    private javax.swing.JTextField jTextFieldQtdEstoque;
     // End of variables declaration//GEN-END:variables
 }
