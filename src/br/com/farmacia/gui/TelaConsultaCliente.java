@@ -5,6 +5,11 @@
  */
 package br.com.farmacia.gui;
 
+import br.com.farmacia.beans.Cliente;
+import br.com.farmacia.dao.ClienteDAO;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Evanilson
@@ -12,7 +17,7 @@ package br.com.farmacia.gui;
 public class TelaConsultaCliente extends javax.swing.JFrame {
 
     /**
-     * Creates new form TelaConsultaCliente
+     * Creates new form TelaCadastroCliente
      */
     public TelaConsultaCliente() {
         initComponents();
@@ -27,21 +32,204 @@ public class TelaConsultaCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanelConsultaCliente = new javax.swing.JPanel();
+        jLabelNomeCliente = new javax.swing.JLabel();
+        jLabelRgCliente = new javax.swing.JLabel();
+        jLabelCpfCliente = new javax.swing.JLabel();
+        jLabelDataNascCliente = new javax.swing.JLabel();
+        jLabelEnderecoCliente = new javax.swing.JLabel();
+        jLabelTelefoneCliente = new javax.swing.JLabel();
+        jTextFieldNomeCliente = new javax.swing.JTextField();
+        jTextFieldRgCliente = new javax.swing.JTextField();
+        jTextFieldCpfCliente = new javax.swing.JTextField();
+        jTextFieldDataNascCliente = new javax.swing.JTextField();
+        jTextFieldEnderecoCliente = new javax.swing.JTextField();
+        jTextFieldTelefoneCliente = new javax.swing.JTextField();
+        jButtonConsultarCliente = new javax.swing.JButton();
+        jButtonCancelarCliente = new javax.swing.JButton();
+        jComboBoxCodigoCpf = new javax.swing.JComboBox();
+        jTextFieldCodigoCpfCliente = new javax.swing.JTextField();
+        jLabelCadastroCliente = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("ConsultarCliente");
+        setResizable(false);
+
+        jPanelConsultaCliente.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabelNomeCliente.setText("Nome:");
+
+        jLabelRgCliente.setText("RG:");
+
+        jLabelCpfCliente.setText("CPF:");
+
+        jLabelDataNascCliente.setText("Data de Nascimento:");
+
+        jLabelEnderecoCliente.setText("Endereço:");
+
+        jLabelTelefoneCliente.setText("Telefone:");
+
+        jTextFieldNomeCliente.setEditable(false);
+
+        jTextFieldRgCliente.setEditable(false);
+
+        jTextFieldCpfCliente.setEditable(false);
+
+        jTextFieldDataNascCliente.setEditable(false);
+
+        jTextFieldEnderecoCliente.setEditable(false);
+
+        jTextFieldTelefoneCliente.setEditable(false);
+
+        jButtonConsultarCliente.setText("Consultar");
+        jButtonConsultarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConsultarClienteActionPerformed(evt);
+            }
+        });
+
+        jButtonCancelarCliente.setText("Cancelar");
+
+        jComboBoxCodigoCpf.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Código", "CPF" }));
+
+        javax.swing.GroupLayout jPanelConsultaClienteLayout = new javax.swing.GroupLayout(jPanelConsultaCliente);
+        jPanelConsultaCliente.setLayout(jPanelConsultaClienteLayout);
+        jPanelConsultaClienteLayout.setHorizontalGroup(
+            jPanelConsultaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelConsultaClienteLayout.createSequentialGroup()
+                .addGroup(jPanelConsultaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelConsultaClienteLayout.createSequentialGroup()
+                        .addContainerGap(439, Short.MAX_VALUE)
+                        .addComponent(jButtonCancelarCliente)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonConsultarCliente))
+                    .addGroup(jPanelConsultaClienteLayout.createSequentialGroup()
+                        .addGroup(jPanelConsultaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelConsultaClienteLayout.createSequentialGroup()
+                                .addGap(80, 80, 80)
+                                .addGroup(jPanelConsultaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabelDataNascCliente)
+                                    .addComponent(jLabelCpfCliente)
+                                    .addComponent(jLabelRgCliente)
+                                    .addComponent(jLabelNomeCliente)
+                                    .addComponent(jLabelTelefoneCliente)
+                                    .addComponent(jLabelEnderecoCliente)))
+                            .addGroup(jPanelConsultaClienteLayout.createSequentialGroup()
+                                .addGap(119, 119, 119)
+                                .addComponent(jComboBoxCodigoCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanelConsultaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldEnderecoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldDataNascCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCodigoCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldRgCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldTelefoneCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanelConsultaClienteLayout.setVerticalGroup(
+            jPanelConsultaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelConsultaClienteLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(jPanelConsultaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBoxCodigoCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldCodigoCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanelConsultaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelNomeCliente)
+                    .addComponent(jTextFieldNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(jPanelConsultaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelRgCliente)
+                    .addComponent(jTextFieldRgCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(jPanelConsultaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelCpfCliente)
+                    .addComponent(jTextFieldCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanelConsultaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelDataNascCliente)
+                    .addComponent(jTextFieldDataNascCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(jPanelConsultaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelEnderecoCliente)
+                    .addComponent(jTextFieldEnderecoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(jPanelConsultaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelTelefoneCliente)
+                    .addComponent(jTextFieldTelefoneCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelConsultaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonConsultarCliente)
+                    .addComponent(jButtonCancelarCliente))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabelCadastroCliente.setText("Consulta de Cliente");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanelConsultaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(256, 256, 256)
+                        .addComponent(jLabelCadastroCliente)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(jLabelCadastroCliente)
+                .addGap(18, 18, 18)
+                .addComponent(jPanelConsultaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonConsultarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultarClienteActionPerformed
+        // TODO add your handling code here:
+        String opcaoConsulta = jComboBoxCodigoCpf.getSelectedItem().toString();
+        if (opcaoConsulta.equals("Código")) {
+            Cliente cliente = new Cliente();
+            ClienteDAO funcaoCliente = new ClienteDAO();
+            try {
+                cliente = funcaoCliente.buscaClienteCodigo(Integer.parseInt(jTextFieldCodigoCpfCliente.getText()));
+                jTextFieldNomeCliente.setText(cliente.getNome());
+                jTextFieldRgCliente.setText(cliente.getRG());
+                jTextFieldCpfCliente.setText(cliente.getCPF());
+                jTextFieldDataNascCliente.setText(cliente.getDataNasc());
+                jTextFieldEnderecoCliente.setText(cliente.getEndereco());
+                jTextFieldTelefoneCliente.setText(cliente.getTelefone());
+            } catch (Exception e) {
+                System.err.println(e.getMessage());
+            }
+        } else {
+            Cliente cliente = new Cliente();
+            ClienteDAO funcaoCliente = new ClienteDAO();
+            try {
+                cliente = funcaoCliente.buscaClienteCpf(jTextFieldCodigoCpfCliente.getText());
+                jTextFieldNomeCliente.setText(cliente.getNome());
+                jTextFieldRgCliente.setText(cliente.getRG());
+                jTextFieldCpfCliente.setText(cliente.getCPF());
+                jTextFieldDataNascCliente.setText(cliente.getDataNasc());
+                jTextFieldEnderecoCliente.setText(cliente.getEndereco());
+                jTextFieldTelefoneCliente.setText(cliente.getTelefone());
+            } catch (Exception e) {
+                System.err.println(e.getMessage());
+            }
+        }
+    }//GEN-LAST:event_jButtonConsultarClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -69,6 +257,7 @@ public class TelaConsultaCliente extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(TelaConsultaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -79,5 +268,23 @@ public class TelaConsultaCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonCancelarCliente;
+    private javax.swing.JButton jButtonConsultarCliente;
+    private javax.swing.JComboBox jComboBoxCodigoCpf;
+    private javax.swing.JLabel jLabelCadastroCliente;
+    private javax.swing.JLabel jLabelCpfCliente;
+    private javax.swing.JLabel jLabelDataNascCliente;
+    private javax.swing.JLabel jLabelEnderecoCliente;
+    private javax.swing.JLabel jLabelNomeCliente;
+    private javax.swing.JLabel jLabelRgCliente;
+    private javax.swing.JLabel jLabelTelefoneCliente;
+    private javax.swing.JPanel jPanelConsultaCliente;
+    private javax.swing.JTextField jTextFieldCodigoCpfCliente;
+    private javax.swing.JTextField jTextFieldCpfCliente;
+    private javax.swing.JTextField jTextFieldDataNascCliente;
+    private javax.swing.JTextField jTextFieldEnderecoCliente;
+    private javax.swing.JTextField jTextFieldNomeCliente;
+    private javax.swing.JTextField jTextFieldRgCliente;
+    private javax.swing.JTextField jTextFieldTelefoneCliente;
     // End of variables declaration//GEN-END:variables
 }

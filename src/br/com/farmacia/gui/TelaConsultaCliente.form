@@ -2,11 +2,13 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+    <Property name="title" type="java.lang.String" value="ConsultarCliente"/>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -23,13 +25,229 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jPanelConsultaCliente" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="256" max="-2" attributes="0"/>
+                      <Component id="jLabelCadastroCliente" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <Component id="jLabelCadastroCliente" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jPanelConsultaCliente" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanelConsultaCliente">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+            <EtchetBorder/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace pref="439" max="32767" attributes="0"/>
+                          <Component id="jButtonCancelarCliente" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jButtonConsultarCliente" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="jLabelDataNascCliente" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabelCpfCliente" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabelRgCliente" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabelNomeCliente" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabelTelefoneCliente" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabelEnderecoCliente" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
+                                  <Component id="jComboBoxCodigoCpf" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jTextFieldEnderecoCliente" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
+                              <Component id="jTextFieldDataNascCliente" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
+                              <Component id="jTextFieldCodigoCpfCliente" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
+                              <Component id="jTextFieldRgCliente" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
+                              <Component id="jTextFieldNomeCliente" alignment="0" min="-2" pref="262" max="-2" attributes="0"/>
+                              <Component id="jTextFieldCpfCliente" min="-2" pref="184" max="-2" attributes="0"/>
+                              <Component id="jTextFieldTelefoneCliente" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jComboBoxCodigoCpf" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldCodigoCpfCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabelNomeCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldNomeCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabelRgCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldRgCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabelCpfCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldCpfCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabelDataNascCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldDataNascCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabelEnderecoCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldEnderecoCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabelTelefoneCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldTelefoneCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jButtonConsultarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonCancelarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabelNomeCliente">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nome:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelRgCliente">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="RG:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelCpfCliente">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="CPF:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelDataNascCliente">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Data de Nascimento:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelEnderecoCliente">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Endere&#xe7;o:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelTelefoneCliente">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Telefone:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldNomeCliente">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldRgCliente">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldCpfCliente">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldDataNascCliente">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldEnderecoCliente">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldTelefoneCliente">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonConsultarCliente">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Consultar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonConsultarClienteActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonCancelarCliente">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cancelar"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBoxCodigoCpf">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="2">
+                <StringItem index="0" value="C&#xf3;digo"/>
+                <StringItem index="1" value="CPF"/>
+              </StringArray>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldCodigoCpfCliente">
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="jLabelCadastroCliente">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Consulta de Cliente"/>
+      </Properties>
+    </Component>
+  </SubComponents>
 </Form>

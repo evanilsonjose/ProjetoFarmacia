@@ -32,15 +32,13 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabelCodigoCliente = new javax.swing.JLabel();
+        jPanelCadastroCliente = new javax.swing.JPanel();
         jLabelNomeCliente = new javax.swing.JLabel();
         jLabelRgCliente = new javax.swing.JLabel();
         jLabelCpfCliente = new javax.swing.JLabel();
         jLabelDataNascCliente = new javax.swing.JLabel();
         jLabelEnderecoCliente = new javax.swing.JLabel();
         jLabelTelefoneCliente = new javax.swing.JLabel();
-        jTextFieldCodigoCliente = new javax.swing.JTextField();
         jTextFieldNomeCliente = new javax.swing.JTextField();
         jTextFieldRgCliente = new javax.swing.JTextField();
         jTextFieldCpfCliente = new javax.swing.JTextField();
@@ -55,9 +53,7 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
         setTitle("CadastrarCliente");
         setResizable(false);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        jLabelCodigoCliente.setText("Código:");
+        jPanelCadastroCliente.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabelNomeCliente.setText("Nome:");
 
@@ -80,73 +76,67 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
 
         jButtonCancelarCliente.setText("Cancelar");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelDataNascCliente, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabelCpfCliente, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabelRgCliente, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabelNomeCliente, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabelCodigoCliente, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabelTelefoneCliente, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabelEnderecoCliente, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(24, 24, 24)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextFieldCodigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldNomeCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                    .addComponent(jTextFieldCpfCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                    .addComponent(jTextFieldRgCliente)
-                    .addComponent(jTextFieldDataNascCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldEnderecoCliente)
-                    .addComponent(jTextFieldTelefoneCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(218, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanelCadastroClienteLayout = new javax.swing.GroupLayout(jPanelCadastroCliente);
+        jPanelCadastroCliente.setLayout(jPanelCadastroClienteLayout);
+        jPanelCadastroClienteLayout.setHorizontalGroup(
+            jPanelCadastroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCadastroClienteLayout.createSequentialGroup()
+                .addContainerGap(439, Short.MAX_VALUE)
                 .addComponent(jButtonCancelarCliente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonCadastrarCliente)
                 .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelCodigoCliente)
-                    .addComponent(jTextFieldCodigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanelCadastroClienteLayout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addGroup(jPanelCadastroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelDataNascCliente, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabelCpfCliente, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabelRgCliente, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabelNomeCliente, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabelTelefoneCliente, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabelEnderecoCliente, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(24, 24, 24)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelCadastroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextFieldNomeCliente)
+                    .addComponent(jTextFieldCpfCliente)
+                    .addComponent(jTextFieldRgCliente)
+                    .addComponent(jTextFieldDataNascCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldEnderecoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldTelefoneCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanelCadastroClienteLayout.setVerticalGroup(
+            jPanelCadastroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelCadastroClienteLayout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addGroup(jPanelCadastroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelNomeCliente)
                     .addComponent(jTextFieldNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelCadastroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelRgCliente)
                     .addComponent(jTextFieldRgCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelCadastroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelCpfCliente)
                     .addComponent(jTextFieldCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelCadastroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelDataNascCliente)
                     .addComponent(jTextFieldDataNascCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelCadastroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelEnderecoCliente)
                     .addComponent(jTextFieldEnderecoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelCadastroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelTelefoneCliente)
                     .addComponent(jTextFieldTelefoneCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanelCadastroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonCadastrarCliente)
                     .addComponent(jButtonCancelarCliente))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabelCadastroCliente.setText("Cadastro de Cliente");
@@ -159,7 +149,7 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jPanelCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(256, 256, 256)
                         .addComponent(jLabelCadastroCliente)))
@@ -171,7 +161,7 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addComponent(jLabelCadastroCliente)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -238,15 +228,13 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
     private javax.swing.JButton jButtonCadastrarCliente;
     private javax.swing.JButton jButtonCancelarCliente;
     private javax.swing.JLabel jLabelCadastroCliente;
-    private javax.swing.JLabel jLabelCodigoCliente;
     private javax.swing.JLabel jLabelCpfCliente;
     private javax.swing.JLabel jLabelDataNascCliente;
     private javax.swing.JLabel jLabelEnderecoCliente;
     private javax.swing.JLabel jLabelNomeCliente;
     private javax.swing.JLabel jLabelRgCliente;
     private javax.swing.JLabel jLabelTelefoneCliente;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextFieldCodigoCliente;
+    private javax.swing.JPanel jPanelCadastroCliente;
     private javax.swing.JTextField jTextFieldCpfCliente;
     private javax.swing.JTextField jTextFieldDataNascCliente;
     private javax.swing.JTextField jTextFieldEnderecoCliente;
