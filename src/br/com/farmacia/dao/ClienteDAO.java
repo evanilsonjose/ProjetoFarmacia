@@ -125,6 +125,7 @@ public class ClienteDAO {
             stmt.setString(4, cliente.getDataNasc());
             stmt.setString(5, cliente.getEndereco());
             stmt.setString(6, cliente.getTelefone());
+            stmt.setInt(7, cliente.getCodigo());
             stmt.execute();
         } catch (Exception e) {
             System.err.println(e.getMessage());

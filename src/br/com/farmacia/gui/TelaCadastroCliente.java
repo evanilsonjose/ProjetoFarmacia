@@ -7,6 +7,7 @@ package br.com.farmacia.gui;
 
 import br.com.farmacia.beans.Cliente;
 import br.com.farmacia.dao.ClienteDAO;
+import br.com.farmacia.util.Util;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
@@ -98,11 +99,11 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addGroup(jPanelCadastroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jTextFieldNomeCliente)
-                    .addComponent(jTextFieldCpfCliente)
-                    .addComponent(jTextFieldRgCliente)
-                    .addComponent(jTextFieldDataNascCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldEnderecoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldTelefoneCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldDataNascCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldRgCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldTelefoneCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelCadastroClienteLayout.setVerticalGroup(
@@ -174,7 +175,9 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
         String nome = jTextFieldNomeCliente.getText();
         String rg = jTextFieldRgCliente.getText();
         String cpf = jTextFieldCpfCliente.getText();
-        String dataNasc = jTextFieldDataNascCliente.getText();
+        String dataNascTemp = jTextFieldDataNascCliente.getText();
+        Util util = new Util();
+        String dataNasc = util.inverteData(dataNascTemp);
         String endereco = jTextFieldEnderecoCliente.getText();
         String telefone = jTextFieldTelefoneCliente.getText();
 
@@ -185,6 +188,13 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso!");
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "SQL erro: " + e.getMessage());
+        } finally {
+            jTextFieldNomeCliente.setText("");
+            jTextFieldRgCliente.setText("");
+            jTextFieldCpfCliente.setText("");
+            jTextFieldDataNascCliente.setText("");
+            jTextFieldEnderecoCliente.setText("");
+            jTextFieldTelefoneCliente.setText("");
         }
 
     }//GEN-LAST:event_jButtonCadastrarClienteActionPerformed

@@ -19,4 +19,12 @@ public class Util {
         }
     }
 
+    public String inverteData(String dataTemp) {
+        String diaNasc = dataTemp.substring(0, 2);
+        String mesNasc = dataTemp.substring(3, 5);
+        String anoNasc = dataTemp.substring(6, 10);
+        String dataNasc = anoNasc + "-" + mesNasc + "-" + diaNasc;
+        return dataNasc;
+    }
+
 }

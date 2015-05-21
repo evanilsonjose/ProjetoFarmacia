@@ -85,11 +85,11 @@
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jTextFieldNomeCliente" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jTextFieldCpfCliente" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jTextFieldRgCliente" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jTextFieldDataNascCliente" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
                       <Component id="jTextFieldEnderecoCliente" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
-                      <Component id="jTextFieldTelefoneCliente" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                      <Component id="jTextFieldDataNascCliente" alignment="0" min="-2" pref="117" max="-2" attributes="0"/>
+                      <Component id="jTextFieldRgCliente" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                      <Component id="jTextFieldCpfCliente" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
+                      <Component id="jTextFieldTelefoneCliente" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
