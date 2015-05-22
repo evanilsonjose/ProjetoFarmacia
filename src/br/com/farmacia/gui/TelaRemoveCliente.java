@@ -5,17 +5,36 @@
  */
 package br.com.farmacia.gui;
 
+import br.com.farmacia.beans.Cliente;
+import br.com.farmacia.dao.ClienteDAO;
+import br.com.farmacia.util.ComboBoxItem;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Evanilson
  */
 public class TelaRemoveCliente extends javax.swing.JFrame {
 
+    ClienteDAO funcaoCliente = new ClienteDAO();
+    List<Cliente> clientes = new ArrayList<>();
+
     /**
-     * Creates new form TelaRemoveCliente
+     * Creates new form TelaCadastroCliente
      */
     public TelaRemoveCliente() {
         initComponents();
+        try {
+            clientes = funcaoCliente.listaClientes();
+            for (Cliente cliente : clientes) {
+                jComboNomeCliente.addItem(new ComboBoxItem(cliente.getCodigo(), cliente.getNome()));
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     /**
@@ -27,22 +46,164 @@ public class TelaRemoveCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanelRemoveCliente = new javax.swing.JPanel();
+        jLabelRgCliente = new javax.swing.JLabel();
+        jLabelCpfCliente = new javax.swing.JLabel();
+        jLabelDataNascCliente = new javax.swing.JLabel();
+        jLabelEnderecoCliente = new javax.swing.JLabel();
+        jLabelTelefoneCliente = new javax.swing.JLabel();
+        jTextFieldRgCliente = new javax.swing.JTextField();
+        jTextFieldCpfCliente = new javax.swing.JTextField();
+        jTextFieldDataNascCliente = new javax.swing.JTextField();
+        jTextFieldEnderecoCliente = new javax.swing.JTextField();
+        jTextFieldTelefoneCliente = new javax.swing.JTextField();
+        jButtonRemoverCliente = new javax.swing.JButton();
+        jButtonCancelarCliente = new javax.swing.JButton();
+        jComboNomeCliente = new javax.swing.JComboBox();
+        jLabelRemoveCliente = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("RemoverCliente");
+        setResizable(false);
+
+        jPanelRemoveCliente.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabelRgCliente.setText("RG:");
+
+        jLabelCpfCliente.setText("CPF:");
+
+        jLabelDataNascCliente.setText("Data de Nascimento:");
+
+        jLabelEnderecoCliente.setText("Endereço:");
+
+        jLabelTelefoneCliente.setText("Telefone:");
+
+        jTextFieldRgCliente.setEditable(false);
+
+        jTextFieldCpfCliente.setEditable(false);
+
+        jTextFieldDataNascCliente.setEditable(false);
+
+        jTextFieldEnderecoCliente.setEditable(false);
+
+        jTextFieldTelefoneCliente.setEditable(false);
+
+        jButtonRemoverCliente.setText("Remover");
+        jButtonRemoverCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRemoverClienteActionPerformed(evt);
+            }
+        });
+
+        jButtonCancelarCliente.setText("Cancelar");
+
+        jComboNomeCliente.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboNomeClienteItemStateChanged(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelRemoveClienteLayout = new javax.swing.GroupLayout(jPanelRemoveCliente);
+        jPanelRemoveCliente.setLayout(jPanelRemoveClienteLayout);
+        jPanelRemoveClienteLayout.setHorizontalGroup(
+            jPanelRemoveClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRemoveClienteLayout.createSequentialGroup()
+                .addGroup(jPanelRemoveClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRemoveClienteLayout.createSequentialGroup()
+                        .addContainerGap(439, Short.MAX_VALUE)
+                        .addComponent(jButtonCancelarCliente)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonRemoverCliente))
+                    .addGroup(jPanelRemoveClienteLayout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addGroup(jPanelRemoveClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabelDataNascCliente)
+                            .addComponent(jLabelCpfCliente)
+                            .addComponent(jLabelRgCliente)
+                            .addComponent(jLabelTelefoneCliente)
+                            .addComponent(jLabelEnderecoCliente))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanelRemoveClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldEnderecoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldDataNascCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldRgCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldTelefoneCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanelRemoveClienteLayout.setVerticalGroup(
+            jPanelRemoveClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRemoveClienteLayout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addComponent(jComboNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanelRemoveClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelRgCliente)
+                    .addComponent(jTextFieldRgCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(jPanelRemoveClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelCpfCliente)
+                    .addComponent(jTextFieldCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanelRemoveClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelDataNascCliente)
+                    .addComponent(jTextFieldDataNascCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(jPanelRemoveClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelEnderecoCliente)
+                    .addComponent(jTextFieldEnderecoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(jPanelRemoveClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelTelefoneCliente)
+                    .addComponent(jTextFieldTelefoneCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelRemoveClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonRemoverCliente)
+                    .addComponent(jButtonCancelarCliente))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabelRemoveCliente.setText("Remove Cliente");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanelRemoveCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(256, 256, 256)
+                        .addComponent(jLabelRemoveCliente)))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(jLabelRemoveCliente)
+                .addGap(18, 18, 18)
+                .addComponent(jPanelRemoveCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonRemoverClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoverClienteActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButtonRemoverClienteActionPerformed
+
+    private void jComboNomeClienteItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboNomeClienteItemStateChanged
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jComboNomeClienteItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -70,6 +231,9 @@ public class TelaRemoveCliente extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(TelaRemoveCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -80,5 +244,20 @@ public class TelaRemoveCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonCancelarCliente;
+    private javax.swing.JButton jButtonRemoverCliente;
+    private javax.swing.JComboBox jComboNomeCliente;
+    private javax.swing.JLabel jLabelCpfCliente;
+    private javax.swing.JLabel jLabelDataNascCliente;
+    private javax.swing.JLabel jLabelEnderecoCliente;
+    private javax.swing.JLabel jLabelRemoveCliente;
+    private javax.swing.JLabel jLabelRgCliente;
+    private javax.swing.JLabel jLabelTelefoneCliente;
+    private javax.swing.JPanel jPanelRemoveCliente;
+    private javax.swing.JTextField jTextFieldCpfCliente;
+    private javax.swing.JTextField jTextFieldDataNascCliente;
+    private javax.swing.JTextField jTextFieldEnderecoCliente;
+    private javax.swing.JTextField jTextFieldRgCliente;
+    private javax.swing.JTextField jTextFieldTelefoneCliente;
     // End of variables declaration//GEN-END:variables
 }

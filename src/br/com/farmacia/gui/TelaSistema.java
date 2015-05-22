@@ -368,7 +368,7 @@ public class TelaSistema extends javax.swing.JFrame {
 
     private void jMenuItemRemClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemRemClienteActionPerformed
         // TODO add your handling code here:
-        TelaRemoveCliente telaRemoveCliente = new TelaRemoveCliente();
+        TelaRemoveClienteOld telaRemoveCliente = new TelaRemoveClienteOld();
         telaRemoveCliente.setVisible(true);
     }//GEN-LAST:event_jMenuItemRemClienteActionPerformed
 
