@@ -60,7 +60,6 @@ public class TelaAlteraEquipamento extends javax.swing.JFrame {
         jLabelModoOperacao = new javax.swing.JLabel();
         jTextFieldModoOperacao = new javax.swing.JTextField();
         jButtonConsultaEquipamento = new javax.swing.JButton();
-        jButtonLimpar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabelNomeEquipamento = new javax.swing.JLabel();
         jTextFieldNomeEquipamento = new javax.swing.JTextField();
@@ -98,8 +97,6 @@ public class TelaAlteraEquipamento extends javax.swing.JFrame {
             }
         });
 
-        jButtonLimpar.setText("Limpar");
-
         jLabel2.setText("Nome do Fornecedor:");
 
         jLabelNomeEquipamento.setText("Nome do equipamento:");
@@ -134,13 +131,10 @@ public class TelaAlteraEquipamento extends javax.swing.JFrame {
                                         .addComponent(jTextFieldQtdEstoque, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jTextFieldModoOperacao, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jComboBoxFornecedorEquipamento, 0, 184, Short.MAX_VALUE))
-                                .addGap(32, 32, 32)
+                                .addGap(103, 103, 103)
                                 .addGroup(jPanelAlterarEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jButtonConsultaEquipamento)
-                                    .addGroup(jPanelAlterarEquipamentoLayout.createSequentialGroup()
-                                        .addComponent(jButtonLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jButtonAlterar)))
+                                    .addComponent(jButtonAlterar))
                                 .addGap(44, 44, 44))))
                     .addGroup(jPanelAlterarEquipamentoLayout.createSequentialGroup()
                         .addComponent(jLabelCod)
@@ -164,9 +158,7 @@ public class TelaAlteraEquipamento extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addGroup(jPanelAlterarEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAlterarEquipamentoLayout.createSequentialGroup()
-                        .addGroup(jPanelAlterarEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButtonLimpar)
-                            .addComponent(jButtonAlterar))
+                        .addComponent(jButtonAlterar)
                         .addGap(30, 30, 30))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAlterarEquipamentoLayout.createSequentialGroup()
                         .addGroup(jPanelAlterarEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -297,7 +289,6 @@ public class TelaAlteraEquipamento extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAlterar;
     private javax.swing.JButton jButtonConsultaEquipamento;
-    private javax.swing.JButton jButtonLimpar;
     private javax.swing.JComboBox jComboBoxFornecedorEquipamento;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
