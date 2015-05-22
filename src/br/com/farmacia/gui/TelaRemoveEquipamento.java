@@ -5,6 +5,12 @@
  */
 package br.com.farmacia.gui;
 
+import br.com.farmacia.beans.Equipamento;
+import br.com.farmacia.dao.ClienteDAO;
+import br.com.farmacia.dao.EquipamentoDAO;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Evanilson
@@ -27,22 +33,207 @@ public class TelaRemoveEquipamento extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanelRemoveEquipamento = new javax.swing.JPanel();
+        jLabelCod = new javax.swing.JLabel();
+        jTextFieldCodEquipamento = new javax.swing.JTextField();
+        jLabelQtdEstoque = new javax.swing.JLabel();
+        jTextFieldQtdEstoque = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jTextFieldPrecoVenda = new javax.swing.JTextField();
+        jLabelPrecoCusto = new javax.swing.JLabel();
+        jTextFieldPrecoCusto = new javax.swing.JTextField();
+        jLabelModoOperacao = new javax.swing.JLabel();
+        jTextFieldModoOperacao = new javax.swing.JTextField();
+        jButtonConsultaEquipamento = new javax.swing.JButton();
+        jButtonLimpar = new javax.swing.JButton();
+        jLabelNomeEquipamento = new javax.swing.JLabel();
+        jTextFieldNomeEquipamento = new javax.swing.JTextField();
+        jButtonRemoverEquipamento = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanelRemoveEquipamento.setBackground(new java.awt.Color(204, 204, 204));
+        jPanelRemoveEquipamento.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabelCod.setText("Código do Equipamento:");
+
+        jLabelQtdEstoque.setText("Quantidade em estoque:");
+
+        jTextFieldQtdEstoque.setEditable(false);
+
+        jLabel3.setText("Custo de Venda:");
+
+        jTextFieldPrecoVenda.setEditable(false);
+
+        jLabelPrecoCusto.setText("Preço de Custo:");
+
+        jTextFieldPrecoCusto.setEditable(false);
+
+        jLabelModoOperacao.setText("Modo de Opreração:");
+
+        jTextFieldModoOperacao.setEditable(false);
+
+        jButtonConsultaEquipamento.setText("Consultar");
+        jButtonConsultaEquipamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConsultaEquipamentoActionPerformed(evt);
+            }
+        });
+
+        jButtonLimpar.setText("Limpar");
+
+        jLabelNomeEquipamento.setText("Nome do equipamento:");
+
+        jButtonRemoverEquipamento.setText("Remover");
+        jButtonRemoverEquipamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRemoverEquipamentoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelRemoveEquipamentoLayout = new javax.swing.GroupLayout(jPanelRemoveEquipamento);
+        jPanelRemoveEquipamento.setLayout(jPanelRemoveEquipamentoLayout);
+        jPanelRemoveEquipamentoLayout.setHorizontalGroup(
+            jPanelRemoveEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRemoveEquipamentoLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addGroup(jPanelRemoveEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelRemoveEquipamentoLayout.createSequentialGroup()
+                        .addGroup(jPanelRemoveEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabelModoOperacao)
+                            .addComponent(jLabelPrecoCusto)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabelQtdEstoque)
+                            .addComponent(jLabelNomeEquipamento))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelRemoveEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelRemoveEquipamentoLayout.createSequentialGroup()
+                                .addGroup(jPanelRemoveEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanelRemoveEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jTextFieldPrecoVenda, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTextFieldPrecoCusto, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTextFieldQtdEstoque, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jTextFieldModoOperacao, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                                .addComponent(jButtonLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(25, 25, 25)
+                                .addComponent(jButtonRemoverEquipamento))
+                            .addGroup(jPanelRemoveEquipamentoLayout.createSequentialGroup()
+                                .addComponent(jTextFieldNomeEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE))))
+                    .addGroup(jPanelRemoveEquipamentoLayout.createSequentialGroup()
+                        .addComponent(jLabelCod)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldCodEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonConsultaEquipamento)))
+                .addGap(43, 43, 43))
+        );
+        jPanelRemoveEquipamentoLayout.setVerticalGroup(
+            jPanelRemoveEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRemoveEquipamentoLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(jPanelRemoveEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelRemoveEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextFieldCodEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonConsultaEquipamento))
+                    .addComponent(jLabelCod))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelRemoveEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelNomeEquipamento)
+                    .addComponent(jTextFieldNomeEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addGroup(jPanelRemoveEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRemoveEquipamentoLayout.createSequentialGroup()
+                        .addGroup(jPanelRemoveEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButtonLimpar)
+                            .addComponent(jButtonRemoverEquipamento))
+                        .addGap(30, 30, 30))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRemoveEquipamentoLayout.createSequentialGroup()
+                        .addGroup(jPanelRemoveEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelQtdEstoque)
+                            .addComponent(jTextFieldQtdEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelRemoveEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jTextFieldPrecoVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelRemoveEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelPrecoCusto)
+                            .addComponent(jTextFieldPrecoCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelRemoveEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelModoOperacao)
+                            .addComponent(jTextFieldModoOperacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(90, 90, 90))))
+        );
+
+        jLabel2.setText("Remover Equipamento");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanelRemoveEquipamento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(240, 240, 240)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addComponent(jPanelRemoveEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonConsultaEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultaEquipamentoActionPerformed
+        // TODO add your handling code here:
+        EquipamentoDAO funcaoEquipamento = new EquipamentoDAO();
+        Equipamento equipamento = new Equipamento();
+        int codigo = Integer.parseInt(jTextFieldCodEquipamento.getText());
+        try {
+            equipamento = funcaoEquipamento.buscaEquipamentoCodigo(codigo);
+            jTextFieldNomeEquipamento.setText(equipamento.getNome());
+            jTextFieldQtdEstoque.setText(String.valueOf(equipamento.getQtdEstoque()));
+            jTextFieldPrecoVenda.setText(String.valueOf(equipamento.getPrecoVenda()));
+            jTextFieldPrecoCusto.setText(String.valueOf(equipamento.getPrecoCusto()));
+            jTextFieldModoOperacao.setText(equipamento.getModoOperacao());
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+    }//GEN-LAST:event_jButtonConsultaEquipamentoActionPerformed
+
+    private void jButtonRemoverEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoverEquipamentoActionPerformed
+        // TODO add your handling code here:
+        int codigo = Integer.parseInt(jTextFieldCodEquipamento.getText());
+        EquipamentoDAO funcaoCliente = new EquipamentoDAO();
+        
+        try {
+            funcaoCliente.removeEquipamento(codigo);
+            JOptionPane.showMessageDialog(null, "Equipamento removido com sucesso!");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "SQL erro: " + e.getMessage());
+        } finally {
+            jTextFieldCodEquipamento.setText("");
+            jTextFieldNomeEquipamento.setText("");
+            jTextFieldQtdEstoque.setText("");
+            jTextFieldPrecoVenda.setText("");
+            jTextFieldPrecoCusto.setText("");
+            jTextFieldModoOperacao.setText("");
+        }
+    }//GEN-LAST:event_jButtonRemoverEquipamentoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -80,5 +271,22 @@ public class TelaRemoveEquipamento extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonConsultaEquipamento;
+    private javax.swing.JButton jButtonLimpar;
+    private javax.swing.JButton jButtonRemoverEquipamento;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabelCod;
+    private javax.swing.JLabel jLabelModoOperacao;
+    private javax.swing.JLabel jLabelNomeEquipamento;
+    private javax.swing.JLabel jLabelPrecoCusto;
+    private javax.swing.JLabel jLabelQtdEstoque;
+    private javax.swing.JPanel jPanelRemoveEquipamento;
+    private javax.swing.JTextField jTextFieldCodEquipamento;
+    private javax.swing.JTextField jTextFieldModoOperacao;
+    private javax.swing.JTextField jTextFieldNomeEquipamento;
+    private javax.swing.JTextField jTextFieldPrecoCusto;
+    private javax.swing.JTextField jTextFieldPrecoVenda;
+    private javax.swing.JTextField jTextFieldQtdEstoque;
     // End of variables declaration//GEN-END:variables
 }

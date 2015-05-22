@@ -47,7 +47,6 @@ public class TelaConsultaEquipamento extends javax.swing.JFrame {
         jLabelModoOperacao = new javax.swing.JLabel();
         jTextFieldModoOperacao = new javax.swing.JTextField();
         jButtonConsultaEquipamento = new javax.swing.JButton();
-        jButtonLimpar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jTextFieldNomeFornecedor = new javax.swing.JTextField();
         jLabelNomeEquipamento = new javax.swing.JLabel();
@@ -84,8 +83,6 @@ public class TelaConsultaEquipamento extends javax.swing.JFrame {
             }
         });
 
-        jButtonLimpar.setText("Limpar");
-
         jLabel1.setText("Nome do Fornecedor:");
 
         jTextFieldNomeFornecedor.setEditable(false);
@@ -119,8 +116,6 @@ public class TelaConsultaEquipamento extends javax.swing.JFrame {
                                         .addComponent(jTextFieldNomeFornecedor, javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jTextFieldModoOperacao, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButtonLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
                                 .addComponent(jButtonConsultaEquipamento)
                                 .addGap(44, 44, 44))
                             .addGroup(jPanelConsultaEquipamentoLayout.createSequentialGroup()
@@ -146,9 +141,7 @@ public class TelaConsultaEquipamento extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelConsultaEquipamentoLayout.createSequentialGroup()
-                        .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButtonConsultaEquipamento)
-                            .addComponent(jButtonLimpar))
+                        .addComponent(jButtonConsultaEquipamento)
                         .addGap(30, 30, 30))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelConsultaEquipamentoLayout.createSequentialGroup()
                         .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,7 +252,6 @@ public class TelaConsultaEquipamento extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonConsultaEquipamento;
-    private javax.swing.JButton jButtonLimpar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelCod;
