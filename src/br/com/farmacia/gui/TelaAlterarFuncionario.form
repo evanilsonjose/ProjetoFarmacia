@@ -27,11 +27,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="247" max="-2" attributes="0"/>
-                      <Component id="jLabelConsultadeFuncionario" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelAlterardeFuncionario" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jPanel1" min="-2" pref="625" max="-2" attributes="0"/>
+                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -42,7 +42,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabelConsultadeFuncionario" min="-2" max="-2" attributes="0"/>
+              <Component id="jLabelAlterardeFuncionario" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
@@ -63,56 +63,57 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jComboBoxCodigoCpf" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelDataNascFuncionario" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelCpfFuncionario" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelRgFuncionario" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelNomeFuncionario" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelEndereçoFuncionario" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelTelefoneFuncionario" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                  <Component id="jLabelSalarioFuncionario" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabelFuncaoFuncionario" min="-2" max="-2" attributes="0"/>
-                              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jComboBoxCodigoCpf" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelDataNascFuncionario" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelCpfFuncionario" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelRgFuncionario" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelNomeFuncionario" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelEndereçoFuncionario" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelTelefoneFuncionario" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                          <Component id="jLabelFuncaoFuncionario" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Component id="jLabelCodigoFuncionario" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelSalarioFuncionario" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="jTextFieldNomeFuncionario" alignment="0" pref="245" max="32767" attributes="0"/>
-                              <Component id="jTextFieldEnderecoFuncionario" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextFieldFuncaoFuncionario" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextFieldCodigoCpfFuncionario" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
-                              <Component id="jTextFieldRgFuncionario" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
-                              <Component id="jTextFieldCpfFuncionario" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
-                              <Component id="jTextFieldDataNascFuncionario" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                              <Component id="jTextFieldTelefoneFuncionario" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
-                              <Component id="jTextFieldSalarioFuncionario" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="291" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jButtonCancelarFuncionario" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jButtonConsultarFuncionario" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="jTextFieldNomeFuncionario" alignment="0" pref="245" max="32767" attributes="0"/>
+                      <Component id="jTextFieldEnderecoFuncionario" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jTextFieldFuncaoFuncionario" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jTextFieldCodigoCpfFuncionario" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
+                      <Component id="jTextFieldRgFuncionario" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
+                      <Component id="jTextFieldCpfFuncionario" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
+                      <Component id="jTextFieldDataNascFuncionario" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                      <Component id="jTextFieldTelefoneFuncionario" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                      <Component id="jTextFieldSalarioFuncionario" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="75" max="32767" attributes="0"/>
+                  <Component id="jButtonConsultarFuncionario" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jButtonCancelarFuncionario" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="jButtonAlterarFuncionario" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jComboBoxCodigoCpf" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jTextFieldCodigoCpfFuncionario" alignment="3" max="32767" attributes="0"/>
+                      <Component id="jButtonConsultarFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -154,12 +155,21 @@
                       <Component id="jLabelSalarioFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jTextFieldSalarioFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButtonCancelarFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButtonConsultarFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jButtonCancelarFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButtonAlterarFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabelCodigoFuncionario" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -189,9 +199,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldNomeFuncionario">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelRgFuncionario">
           <Properties>
@@ -199,9 +206,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldRgFuncionario">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelCpfFuncionario">
           <Properties>
@@ -209,9 +213,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldCpfFuncionario">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelDataNascFuncionario">
           <Properties>
@@ -219,9 +220,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldDataNascFuncionario">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelEndere&#xe7;oFuncionario">
           <Properties>
@@ -229,9 +227,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldEnderecoFuncionario">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelTelefoneFuncionario">
           <Properties>
@@ -239,9 +234,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldTelefoneFuncionario">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelFuncaoFuncionario">
           <Properties>
@@ -249,9 +241,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldFuncaoFuncionario">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldFuncaoFuncionarioActionPerformed"/>
           </Events>
@@ -262,9 +251,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldSalarioFuncionario">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonCancelarFuncionario">
           <Properties>
@@ -279,11 +265,21 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonConsultarFuncionarioActionPerformed"/>
           </Events>
         </Component>
+        <Component class="javax.swing.JLabel" name="jLabelCodigoFuncionario">
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonAlterarFuncionario">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Atualizar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAlterarFuncionarioActionPerformed"/>
+          </Events>
+        </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="jLabelConsultadeFuncionario">
+    <Component class="javax.swing.JLabel" name="jLabelAlterardeFuncionario">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Consulta de Funcionario"/>
+        <Property name="text" type="java.lang.String" value="Alterar de Funcionario"/>
       </Properties>
     </Component>
   </SubComponents>

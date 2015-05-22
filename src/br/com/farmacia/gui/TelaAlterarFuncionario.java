@@ -6,19 +6,25 @@
 package br.com.farmacia.gui;
 
 import br.com.farmacia.beans.Funcionario;
+
 import br.com.farmacia.dao.FuncionarioDAO;
+import br.com.farmacia.util.Util;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Evanilson
  */
-public class TelaConsultaFuncionario extends javax.swing.JFrame {
+public class TelaAlterarFuncionario extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaConsultaFuncionario
      */
-    public TelaConsultaFuncionario() {
+    public TelaAlterarFuncionario() {
         initComponents();
+        jLabelCodigoFuncionario.setVisible(false);
+        
     }
 
     /**
@@ -51,7 +57,9 @@ public class TelaConsultaFuncionario extends javax.swing.JFrame {
         jTextFieldSalarioFuncionario = new javax.swing.JTextField();
         jButtonCancelarFuncionario = new javax.swing.JButton();
         jButtonConsultarFuncionario = new javax.swing.JButton();
-        jLabelConsultadeFuncionario = new javax.swing.JLabel();
+        jLabelCodigoFuncionario = new javax.swing.JLabel();
+        jButtonAlterarFuncionario = new javax.swing.JButton();
+        jLabelAlterardeFuncionario = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,31 +74,18 @@ public class TelaConsultaFuncionario extends javax.swing.JFrame {
 
         jLabelNomeFuncionario.setText("Nome:");
 
-        jTextFieldNomeFuncionario.setEditable(false);
-
         jLabelRgFuncionario.setText("RG:");
-
-        jTextFieldRgFuncionario.setEditable(false);
 
         jLabelCpfFuncionario.setText("CPF:");
 
-        jTextFieldCpfFuncionario.setEditable(false);
-
         jLabelDataNascFuncionario.setText("Data de Nascimento:");
-
-        jTextFieldDataNascFuncionario.setEditable(false);
 
         jLabelEndereçoFuncionario.setText("Endereço:");
 
-        jTextFieldEnderecoFuncionario.setEditable(false);
-
         jLabelTelefoneFuncionario.setText("Talefone:");
-
-        jTextFieldTelefoneFuncionario.setEditable(false);
 
         jLabelFuncaoFuncionario.setText("Função:");
 
-        jTextFieldFuncaoFuncionario.setEditable(false);
         jTextFieldFuncaoFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldFuncaoFuncionarioActionPerformed(evt);
@@ -98,8 +93,6 @@ public class TelaConsultaFuncionario extends javax.swing.JFrame {
         });
 
         jLabelSalarioFuncionario.setText("Salario:");
-
-        jTextFieldSalarioFuncionario.setEditable(false);
 
         jButtonCancelarFuncionario.setText("Cancelar");
 
@@ -110,52 +103,61 @@ public class TelaConsultaFuncionario extends javax.swing.JFrame {
             }
         });
 
+        jButtonAlterarFuncionario.setText("Atualizar");
+        jButtonAlterarFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAlterarFuncionarioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jComboBoxCodigoCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelDataNascFuncionario)
+                    .addComponent(jLabelCpfFuncionario)
+                    .addComponent(jLabelRgFuncionario)
+                    .addComponent(jLabelNomeFuncionario)
+                    .addComponent(jLabelEndereçoFuncionario)
+                    .addComponent(jLabelTelefoneFuncionario)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabelFuncaoFuncionario)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jComboBoxCodigoCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelDataNascFuncionario)
-                            .addComponent(jLabelCpfFuncionario)
-                            .addComponent(jLabelRgFuncionario)
-                            .addComponent(jLabelNomeFuncionario)
-                            .addComponent(jLabelEndereçoFuncionario)
-                            .addComponent(jLabelTelefoneFuncionario)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabelSalarioFuncionario)
-                                .addComponent(jLabelFuncaoFuncionario)))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextFieldNomeFuncionario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
-                            .addComponent(jTextFieldEnderecoFuncionario, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldFuncaoFuncionario, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldCodigoCpfFuncionario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldRgFuncionario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldCpfFuncionario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldDataNascFuncionario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldTelefoneFuncionario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldSalarioFuncionario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(291, 291, 291))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButtonCancelarFuncionario)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonConsultarFuncionario)
-                        .addGap(70, 70, 70)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabelCodigoFuncionario)
+                            .addComponent(jLabelSalarioFuncionario))))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jTextFieldNomeFuncionario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+                    .addComponent(jTextFieldEnderecoFuncionario, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextFieldFuncaoFuncionario, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextFieldCodigoCpfFuncionario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldRgFuncionario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldCpfFuncionario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldDataNascFuncionario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldTelefoneFuncionario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldSalarioFuncionario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                .addComponent(jButtonConsultarFuncionario)
+                .addGap(89, 89, 89))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonCancelarFuncionario)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonAlterarFuncionario)
+                .addGap(64, 64, 64))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBoxCodigoCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldCodigoCpfFuncionario))
+                    .addComponent(jTextFieldCodigoCpfFuncionario)
+                    .addComponent(jButtonConsultarFuncionario))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelNomeFuncionario)
@@ -188,16 +190,22 @@ public class TelaConsultaFuncionario extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelSalarioFuncionario)
                     .addComponent(jTextFieldSalarioFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(63, 63, 63)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonCancelarFuncionario)
-                    .addComponent(jButtonConsultarFuncionario))
-                .addGap(20, 20, 20))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButtonCancelarFuncionario)
+                            .addComponent(jButtonAlterarFuncionario))
+                        .addGap(24, 24, 24))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelCodigoFuncionario)
+                        .addGap(42, 42, 42))))
         );
 
         jComboBoxCodigoCpf.getAccessibleContext().setAccessibleName("Código");
 
-        jLabelConsultadeFuncionario.setText("Consulta de Funcionario");
+        jLabelAlterardeFuncionario.setText("Alterar de Funcionario");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -207,17 +215,17 @@ public class TelaConsultaFuncionario extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(247, 247, 247)
-                        .addComponent(jLabelConsultadeFuncionario))
+                        .addComponent(jLabelAlterardeFuncionario))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabelConsultadeFuncionario)
+                .addComponent(jLabelAlterardeFuncionario)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -232,7 +240,7 @@ public class TelaConsultaFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldFuncaoFuncionarioActionPerformed
 
     private void jButtonConsultarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultarFuncionarioActionPerformed
-       String opcaoConsulta = jComboBoxCodigoCpf.getSelectedItem().toString();
+        String opcaoConsulta = jComboBoxCodigoCpf.getSelectedItem().toString();
         if (opcaoConsulta.equals("Código")) {
             Funcionario funcionario = new Funcionario();
             FuncionarioDAO funcaoFuncionario = new FuncionarioDAO();
@@ -246,7 +254,7 @@ public class TelaConsultaFuncionario extends javax.swing.JFrame {
                 jTextFieldTelefoneFuncionario.setText(funcionario.getTelefone());
                 jTextFieldFuncaoFuncionario.setText(funcionario.getFuncao());
                 jTextFieldSalarioFuncionario.setText(String.valueOf(funcionario.getSalario()));
-                
+
             } catch (Exception e) {
                 System.err.println(e.getMessage());
             }
@@ -263,7 +271,7 @@ public class TelaConsultaFuncionario extends javax.swing.JFrame {
                 jTextFieldTelefoneFuncionario.setText(funcionario.getTelefone());
                 jTextFieldFuncaoFuncionario.setText(funcionario.getFuncao());
                 jTextFieldSalarioFuncionario.setText(String.valueOf(funcionario.getSalario()));
-                
+
             } catch (Exception e) {
                 System.err.println(e.getMessage());
             }
@@ -283,6 +291,44 @@ public class TelaConsultaFuncionario extends javax.swing.JFrame {
         jTextFieldSalarioFuncionario.setText("");
     }//GEN-LAST:event_jComboBoxCodigoCpfItemStateChanged
 
+    private void jButtonAlterarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAlterarFuncionarioActionPerformed
+        // TODO add your handling code here:
+        
+                int codigo = Integer.parseInt(jLabelCodigoFuncionario.getText());
+        String nome = jTextFieldNomeFuncionario.getText();
+        String rg = jTextFieldRgFuncionario.getText();
+        String cpf = jTextFieldCpfFuncionario.getText();
+        String dataNascTemp = jTextFieldDataNascFuncionario.getText();
+        Util util = new Util();
+        String dataNasc = util.inverteData(dataNascTemp);
+        String endereco = jTextFieldEnderecoFuncionario.getText();
+        String telefone = jTextFieldTelefoneFuncionario.getText();
+        String funcao = jTextFieldFuncaoFuncionario.getText();
+        double salario = Double.parseDouble(jTextFieldSalarioFuncionario.getText());
+        
+
+        Funcionario funcionario = new Funcionario(codigo, nome, endereco, telefone, rg, cpf, dataNasc, funcao, salario);
+        FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+        try {
+            funcionarioDAO.alteraFuncionario(funcionario);
+            JOptionPane.showMessageDialog(null, "Funcionario atualizado com sucesso!");
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "SQL erro: " + e.getMessage());
+        } finally {
+            jTextFieldCodigoCpfFuncionario.setText("");
+            jTextFieldNomeFuncionario.setText("");
+            jTextFieldRgFuncionario.setText("");
+            jTextFieldCpfFuncionario.setText("");
+            jTextFieldDataNascFuncionario.setText("");
+            jTextFieldEnderecoFuncionario.setText("");
+            jTextFieldTelefoneFuncionario.setText("");
+            jTextFieldFuncaoFuncionario.setText("");
+            jTextFieldSalarioFuncionario.setText("");
+            
+        }
+
+    }//GEN-LAST:event_jButtonAlterarFuncionarioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -300,29 +346,32 @@ public class TelaConsultaFuncionario extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaConsultaFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaAlterarFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaConsultaFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaAlterarFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaConsultaFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaAlterarFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaConsultaFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaAlterarFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaConsultaFuncionario().setVisible(true);
+                new TelaAlterarFuncionario().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonAlterarFuncionario;
     private javax.swing.JButton jButtonCancelarFuncionario;
     private javax.swing.JButton jButtonConsultarFuncionario;
     private javax.swing.JComboBox jComboBoxCodigoCpf;
-    private javax.swing.JLabel jLabelConsultadeFuncionario;
+    private javax.swing.JLabel jLabelAlterardeFuncionario;
+    private javax.swing.JLabel jLabelCodigoFuncionario;
     private javax.swing.JLabel jLabelCpfFuncionario;
     private javax.swing.JLabel jLabelDataNascFuncionario;
     private javax.swing.JLabel jLabelEndereçoFuncionario;
