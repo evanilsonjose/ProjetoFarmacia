@@ -45,7 +45,6 @@ public class TelaRemoveEquipamento extends javax.swing.JFrame {
         jLabelModoOperacao = new javax.swing.JLabel();
         jTextFieldModoOperacao = new javax.swing.JTextField();
         jButtonConsultaEquipamento = new javax.swing.JButton();
-        jButtonLimpar = new javax.swing.JButton();
         jLabelNomeEquipamento = new javax.swing.JLabel();
         jTextFieldNomeEquipamento = new javax.swing.JTextField();
         jButtonRemoverEquipamento = new javax.swing.JButton();
@@ -81,8 +80,6 @@ public class TelaRemoveEquipamento extends javax.swing.JFrame {
             }
         });
 
-        jButtonLimpar.setText("Limpar");
-
         jLabelNomeEquipamento.setText("Nome do equipamento:");
 
         jButtonRemoverEquipamento.setText("Remover");
@@ -115,9 +112,7 @@ public class TelaRemoveEquipamento extends javax.swing.JFrame {
                                         .addComponent(jTextFieldPrecoCusto, javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jTextFieldQtdEstoque, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jTextFieldModoOperacao, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
-                                .addComponent(jButtonLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(25, 25, 25)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButtonRemoverEquipamento))
                             .addGroup(jPanelRemoveEquipamentoLayout.createSequentialGroup()
                                 .addComponent(jTextFieldNomeEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -146,9 +141,7 @@ public class TelaRemoveEquipamento extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addGroup(jPanelRemoveEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRemoveEquipamentoLayout.createSequentialGroup()
-                        .addGroup(jPanelRemoveEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButtonLimpar)
-                            .addComponent(jButtonRemoverEquipamento))
+                        .addComponent(jButtonRemoverEquipamento)
                         .addGap(30, 30, 30))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRemoveEquipamentoLayout.createSequentialGroup()
                         .addGroup(jPanelRemoveEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,7 +265,6 @@ public class TelaRemoveEquipamento extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonConsultaEquipamento;
-    private javax.swing.JButton jButtonLimpar;
     private javax.swing.JButton jButtonRemoverEquipamento;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
