@@ -5,17 +5,37 @@
  */
 package br.com.farmacia.gui;
 
+import br.com.farmacia.beans.Equipamento;
+import br.com.farmacia.beans.Fornecedor;
+import br.com.farmacia.dao.EquipamentoDAO;
+import br.com.farmacia.dao.FornecedorDAO;
+import br.com.farmacia.util.ComboBoxItem;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Evanilson
  */
 public class TelaAlteraEquipamento extends javax.swing.JFrame {
 
+    FornecedorDAO funcaoFornecedor = new FornecedorDAO();
+    List<Fornecedor> fornecedores = new ArrayList<>();
     /**
      * Creates new form TelaAlteraEquipamento
      */
     public TelaAlteraEquipamento() {
         initComponents();
+        try {
+            fornecedores = funcaoFornecedor.listaFornecedores();
+            for (Fornecedor fornecedor : fornecedores) {
+                jComboBoxFornecedorEquipamento.addItem(new ComboBoxItem(fornecedor.getCodigo(), fornecedor.getNome()));
+            }  
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        
     }
 
     /**
@@ -27,22 +47,217 @@ public class TelaAlteraEquipamento extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanelAlteraEquipamento = new javax.swing.JPanel();
+        jPanelAlterarEquipamento = new javax.swing.JPanel();
+        jLabelCod = new javax.swing.JLabel();
+        jTextFieldCodEquipamento = new javax.swing.JTextField();
+        jLabelQtdEstoque = new javax.swing.JLabel();
+        jTextFieldQtdEstoque = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jTextFieldPrecoVenda = new javax.swing.JTextField();
+        jLabelPrecoCusto = new javax.swing.JLabel();
+        jTextFieldPrecoCusto = new javax.swing.JTextField();
+        jLabelModoOperacao = new javax.swing.JLabel();
+        jTextFieldModoOperacao = new javax.swing.JTextField();
+        jButtonConsultaEquipamento = new javax.swing.JButton();
+        jButtonLimpar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabelNomeEquipamento = new javax.swing.JLabel();
+        jTextFieldNomeEquipamento = new javax.swing.JTextField();
+        jButtonAlterar = new javax.swing.JButton();
+        jComboBoxFornecedorEquipamento = new javax.swing.JComboBox();
+        jLabelAlterarEquipamento = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanelAlterarEquipamento.setBackground(new java.awt.Color(204, 204, 204));
+        jPanelAlterarEquipamento.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabelCod.setText("Código do Equipamento:");
+
+        jLabelQtdEstoque.setText("Quantidade em estoque:");
+
+        jTextFieldQtdEstoque.setEditable(false);
+
+        jLabel3.setText("Custo de Venda:");
+
+        jTextFieldPrecoVenda.setEditable(false);
+
+        jLabelPrecoCusto.setText("Preço de Custo:");
+
+        jTextFieldPrecoCusto.setEditable(false);
+
+        jLabelModoOperacao.setText("Modo de Opreração:");
+
+        jTextFieldModoOperacao.setEditable(false);
+
+        jButtonConsultaEquipamento.setText("Consultar");
+        jButtonConsultaEquipamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConsultaEquipamentoActionPerformed(evt);
+            }
+        });
+
+        jButtonLimpar.setText("Limpar");
+
+        jLabel2.setText("Nome do Fornecedor:");
+
+        jLabelNomeEquipamento.setText("Nome do equipamento:");
+
+        jButtonAlterar.setText("Alterar");
+
+        javax.swing.GroupLayout jPanelAlterarEquipamentoLayout = new javax.swing.GroupLayout(jPanelAlterarEquipamento);
+        jPanelAlterarEquipamento.setLayout(jPanelAlterarEquipamentoLayout);
+        jPanelAlterarEquipamentoLayout.setHorizontalGroup(
+            jPanelAlterarEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelAlterarEquipamentoLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addGroup(jPanelAlterarEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelAlterarEquipamentoLayout.createSequentialGroup()
+                        .addGroup(jPanelAlterarEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabelModoOperacao)
+                            .addComponent(jLabelPrecoCusto)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabelQtdEstoque)
+                            .addComponent(jLabelNomeEquipamento))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelAlterarEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelAlterarEquipamentoLayout.createSequentialGroup()
+                                .addComponent(jTextFieldNomeEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAlterarEquipamentoLayout.createSequentialGroup()
+                                .addGroup(jPanelAlterarEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanelAlterarEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jTextFieldPrecoVenda, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTextFieldPrecoCusto, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTextFieldQtdEstoque, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jTextFieldModoOperacao, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBoxFornecedorEquipamento, 0, 184, Short.MAX_VALUE))
+                                .addGap(32, 32, 32)
+                                .addGroup(jPanelAlterarEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jButtonConsultaEquipamento)
+                                    .addGroup(jPanelAlterarEquipamentoLayout.createSequentialGroup()
+                                        .addComponent(jButtonLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jButtonAlterar)))
+                                .addGap(44, 44, 44))))
+                    .addGroup(jPanelAlterarEquipamentoLayout.createSequentialGroup()
+                        .addComponent(jLabelCod)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldCodEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+        jPanelAlterarEquipamentoLayout.setVerticalGroup(
+            jPanelAlterarEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelAlterarEquipamentoLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(jPanelAlterarEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelAlterarEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextFieldCodEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonConsultaEquipamento))
+                    .addComponent(jLabelCod))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelAlterarEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelNomeEquipamento)
+                    .addComponent(jTextFieldNomeEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addGroup(jPanelAlterarEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAlterarEquipamentoLayout.createSequentialGroup()
+                        .addGroup(jPanelAlterarEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButtonLimpar)
+                            .addComponent(jButtonAlterar))
+                        .addGap(30, 30, 30))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAlterarEquipamentoLayout.createSequentialGroup()
+                        .addGroup(jPanelAlterarEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelQtdEstoque)
+                            .addComponent(jTextFieldQtdEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelAlterarEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jTextFieldPrecoVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelAlterarEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelPrecoCusto)
+                            .addComponent(jTextFieldPrecoCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelAlterarEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelModoOperacao)
+                            .addComponent(jTextFieldModoOperacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelAlterarEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jComboBoxFornecedorEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(52, 52, 52))))
+        );
+
+        javax.swing.GroupLayout jPanelAlteraEquipamentoLayout = new javax.swing.GroupLayout(jPanelAlteraEquipamento);
+        jPanelAlteraEquipamento.setLayout(jPanelAlteraEquipamentoLayout);
+        jPanelAlteraEquipamentoLayout.setHorizontalGroup(
+            jPanelAlteraEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanelAlteraEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelAlteraEquipamentoLayout.createSequentialGroup()
+                    .addGap(2, 2, 2)
+                    .addComponent(jPanelAlterarEquipamento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(3, 3, 3)))
+        );
+        jPanelAlteraEquipamentoLayout.setVerticalGroup(
+            jPanelAlteraEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 396, Short.MAX_VALUE)
+            .addGroup(jPanelAlteraEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelAlteraEquipamentoLayout.createSequentialGroup()
+                    .addGap(22, 22, 22)
+                    .addComponent(jPanelAlterarEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(22, Short.MAX_VALUE)))
+        );
+
+        jLabelAlterarEquipamento.setText("Alterações de Equipamento");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanelAlteraEquipamento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(225, Short.MAX_VALUE)
+                .addComponent(jLabelAlterarEquipamento)
+                .addGap(265, 265, 265))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabelAlterarEquipamento)
+                .addGap(18, 18, 18)
+                .addComponent(jPanelAlteraEquipamento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonConsultaEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultaEquipamentoActionPerformed
+        // TODO add your handling code here:
+        EquipamentoDAO funcaoEquipamento = new EquipamentoDAO();
+        Equipamento equipamento = new Equipamento();
+        int codigo = Integer.parseInt(jTextFieldCodEquipamento.getText());
+        try {
+            equipamento = funcaoEquipamento.buscaEquipamentoCodigo(codigo);
+            jTextFieldNomeEquipamento.setText(equipamento.getNome());
+            jTextFieldQtdEstoque.setText(String.valueOf(equipamento.getQtdEstoque()));
+            jTextFieldPrecoVenda.setText(String.valueOf(equipamento.getPrecoVenda()));
+            jTextFieldPrecoCusto.setText(String.valueOf(equipamento.getPrecoCusto()));
+            jTextFieldModoOperacao.setText(equipamento.getModoOperacao());
+            jComboBoxFornecedorEquipamento.setSelectedItem(new ComboBoxItem(equipamento.getFornecedor().getCodigo(), equipamento.getFornecedor().getNome()));
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+    }//GEN-LAST:event_jButtonConsultaEquipamentoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -80,5 +295,25 @@ public class TelaAlteraEquipamento extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonAlterar;
+    private javax.swing.JButton jButtonConsultaEquipamento;
+    private javax.swing.JButton jButtonLimpar;
+    private javax.swing.JComboBox jComboBoxFornecedorEquipamento;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabelAlterarEquipamento;
+    private javax.swing.JLabel jLabelCod;
+    private javax.swing.JLabel jLabelModoOperacao;
+    private javax.swing.JLabel jLabelNomeEquipamento;
+    private javax.swing.JLabel jLabelPrecoCusto;
+    private javax.swing.JLabel jLabelQtdEstoque;
+    private javax.swing.JPanel jPanelAlteraEquipamento;
+    private javax.swing.JPanel jPanelAlterarEquipamento;
+    private javax.swing.JTextField jTextFieldCodEquipamento;
+    private javax.swing.JTextField jTextFieldModoOperacao;
+    private javax.swing.JTextField jTextFieldNomeEquipamento;
+    private javax.swing.JTextField jTextFieldPrecoCusto;
+    private javax.swing.JTextField jTextFieldPrecoVenda;
+    private javax.swing.JTextField jTextFieldQtdEstoque;
     // End of variables declaration//GEN-END:variables
 }
