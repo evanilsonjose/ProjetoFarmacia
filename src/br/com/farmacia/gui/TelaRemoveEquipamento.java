@@ -82,6 +82,8 @@ public class TelaRemoveEquipamento extends javax.swing.JFrame {
 
         jLabelNomeEquipamento.setText("Nome do equipamento:");
 
+        jTextFieldNomeEquipamento.setEditable(false);
+
         jButtonRemoverEquipamento.setText("Remover");
         jButtonRemoverEquipamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
