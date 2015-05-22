@@ -42,7 +42,7 @@
               <Component id="jLabelTítulo" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jPanelConsultaEquipamento" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="38" max="32767" attributes="0"/>
+              <EmptySpace pref="26" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -63,37 +63,51 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButtonLimpar" min="-2" pref="75" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jButtonConsulta" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-              </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabelModoOperacao" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabelPrecoCusto" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabelQtdEstoque" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabelCod" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jTextFieldCodEquipamento" min="-2" pref="154" max="-2" attributes="0"/>
-                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jTextFieldPrecoVenda" alignment="0" pref="93" max="32767" attributes="0"/>
-                          <Component id="jTextFieldPrecoCusto" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jTextFieldQtdEstoque" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelModoOperacao" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelPrecoCusto" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelQtdEstoque" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelNomeEquipamento" alignment="1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="jTextFieldPrecoVenda" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jTextFieldPrecoCusto" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jTextFieldQtdEstoque" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="jTextFieldNomeFornecedor" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jTextFieldModoOperacao" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jButtonLimpar" min="-2" pref="75" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jButtonConsultaEquipamento" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="jTextFieldNomeEquipamento" min="-2" pref="207" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
-                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jTextFieldNomeFornecedor" alignment="0" pref="115" max="32767" attributes="0"/>
-                          <Component id="jTextFieldModoOperacao" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="jLabelCod" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jTextFieldCodEquipamento" min="-2" pref="154" max="-2" attributes="0"/>
+                          <EmptySpace pref="258" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="258" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -106,36 +120,47 @@
                       <Component id="jLabelCod" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabelQtdEstoque" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextFieldQtdEstoque" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextFieldPrecoVenda" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabelPrecoCusto" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextFieldPrecoCusto" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabelModoOperacao" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextFieldModoOperacao" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextFieldNomeFornecedor" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="31" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButtonConsulta" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButtonLimpar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelNomeEquipamento" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldNomeEquipamento" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace pref="24" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jButtonConsultaEquipamento" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButtonLimpar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabelQtdEstoque" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextFieldQtdEstoque" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextFieldPrecoVenda" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabelPrecoCusto" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextFieldPrecoCusto" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabelModoOperacao" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextFieldModoOperacao" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextFieldNomeFornecedor" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
@@ -154,6 +179,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldQtdEstoque">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
@@ -161,6 +189,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldPrecoVenda">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelPrecoCusto">
           <Properties>
@@ -168,6 +199,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldPrecoCusto">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelModoOperacao">
           <Properties>
@@ -175,11 +209,17 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldModoOperacao">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButtonConsulta">
+        <Component class="javax.swing.JButton" name="jButtonConsultaEquipamento">
           <Properties>
             <Property name="text" type="java.lang.String" value="Consultar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonConsultaEquipamentoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonLimpar">
           <Properties>
@@ -192,6 +232,16 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldNomeFornecedor">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelNomeEquipamento">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nome do equipamento:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldNomeEquipamento">
         </Component>
       </SubComponents>
     </Container>

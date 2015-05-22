@@ -5,6 +5,14 @@
  */
 package br.com.farmacia.gui;
 
+import br.com.farmacia.beans.Equipamento;
+import br.com.farmacia.dao.EquipamentoDAO;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Evanilson
@@ -38,10 +46,12 @@ public class TelaConsultaEquipamento extends javax.swing.JFrame {
         jTextFieldPrecoCusto = new javax.swing.JTextField();
         jLabelModoOperacao = new javax.swing.JLabel();
         jTextFieldModoOperacao = new javax.swing.JTextField();
-        jButtonConsulta = new javax.swing.JButton();
+        jButtonConsultaEquipamento = new javax.swing.JButton();
         jButtonLimpar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jTextFieldNomeFornecedor = new javax.swing.JTextField();
+        jLabelNomeEquipamento = new javax.swing.JLabel();
+        jTextFieldNomeEquipamento = new javax.swing.JTextField();
         jLabelTítulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -53,48 +63,74 @@ public class TelaConsultaEquipamento extends javax.swing.JFrame {
 
         jLabelQtdEstoque.setText("Quantidade em estoque:");
 
+        jTextFieldQtdEstoque.setEditable(false);
+
         jLabel3.setText("Custo de Venda:");
+
+        jTextFieldPrecoVenda.setEditable(false);
 
         jLabelPrecoCusto.setText("Preço de Custo:");
 
+        jTextFieldPrecoCusto.setEditable(false);
+
         jLabelModoOperacao.setText("Modo de Opreração:");
 
-        jButtonConsulta.setText("Consultar");
+        jTextFieldModoOperacao.setEditable(false);
+
+        jButtonConsultaEquipamento.setText("Consultar");
+        jButtonConsultaEquipamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConsultaEquipamentoActionPerformed(evt);
+            }
+        });
 
         jButtonLimpar.setText("Limpar");
 
         jLabel1.setText("Nome do Fornecedor:");
 
+        jTextFieldNomeFornecedor.setEditable(false);
+
+        jLabelNomeEquipamento.setText("Nome do equipamento:");
+
         javax.swing.GroupLayout jPanelConsultaEquipamentoLayout = new javax.swing.GroupLayout(jPanelConsultaEquipamento);
         jPanelConsultaEquipamento.setLayout(jPanelConsultaEquipamentoLayout);
         jPanelConsultaEquipamentoLayout.setHorizontalGroup(
             jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelConsultaEquipamentoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonConsulta)
-                .addGap(44, 44, 44))
             .addGroup(jPanelConsultaEquipamentoLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabelModoOperacao)
-                    .addComponent(jLabelPrecoCusto)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabelQtdEstoque)
-                    .addComponent(jLabelCod))
-                .addGap(18, 18, 18)
+                .addGap(45, 45, 45)
                 .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldCodEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jTextFieldPrecoVenda, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
-                        .addComponent(jTextFieldPrecoCusto, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jTextFieldQtdEstoque, javax.swing.GroupLayout.Alignment.LEADING))
-                    .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jTextFieldNomeFornecedor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
-                        .addComponent(jTextFieldModoOperacao, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addContainerGap(258, Short.MAX_VALUE))
+                    .addGroup(jPanelConsultaEquipamentoLayout.createSequentialGroup()
+                        .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabelModoOperacao)
+                            .addComponent(jLabelPrecoCusto)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabelQtdEstoque)
+                            .addComponent(jLabelNomeEquipamento))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelConsultaEquipamentoLayout.createSequentialGroup()
+                                .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jTextFieldPrecoVenda, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTextFieldPrecoCusto, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTextFieldQtdEstoque, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jTextFieldNomeFornecedor, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTextFieldModoOperacao, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButtonLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButtonConsultaEquipamento)
+                                .addGap(44, 44, 44))
+                            .addGroup(jPanelConsultaEquipamentoLayout.createSequentialGroup()
+                                .addComponent(jTextFieldNomeEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(jPanelConsultaEquipamentoLayout.createSequentialGroup()
+                        .addComponent(jLabelCod)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldCodEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(258, Short.MAX_VALUE))))
         );
         jPanelConsultaEquipamentoLayout.setVerticalGroup(
             jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,30 +140,37 @@ public class TelaConsultaEquipamento extends javax.swing.JFrame {
                     .addComponent(jTextFieldCodEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelCod))
                 .addGap(18, 18, 18)
-                .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelQtdEstoque)
-                    .addComponent(jTextFieldQtdEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextFieldPrecoVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelPrecoCusto)
-                    .addComponent(jTextFieldPrecoCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelModoOperacao)
-                    .addComponent(jTextFieldModoOperacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextFieldNomeFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonConsulta)
-                    .addComponent(jButtonLimpar))
-                .addGap(30, 30, 30))
+                    .addComponent(jLabelNomeEquipamento)
+                    .addComponent(jTextFieldNomeEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelConsultaEquipamentoLayout.createSequentialGroup()
+                        .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButtonConsultaEquipamento)
+                            .addComponent(jButtonLimpar))
+                        .addGap(30, 30, 30))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelConsultaEquipamentoLayout.createSequentialGroup()
+                        .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelQtdEstoque)
+                            .addComponent(jTextFieldQtdEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jTextFieldPrecoVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelPrecoCusto)
+                            .addComponent(jTextFieldPrecoCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelModoOperacao)
+                            .addComponent(jTextFieldModoOperacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelConsultaEquipamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jTextFieldNomeFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(52, 52, 52))))
         );
 
         jLabelTítulo.setText("Consultar Equipamento");
@@ -152,12 +195,32 @@ public class TelaConsultaEquipamento extends javax.swing.JFrame {
                 .addComponent(jLabelTítulo)
                 .addGap(18, 18, 18)
                 .addComponent(jPanelConsultaEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonConsultaEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultaEquipamentoActionPerformed
+        // TODO add your handling code here:
+        //List<Equipamento> equipamentos = new ArrayList<>();
+        EquipamentoDAO funcaoEquipamento = new EquipamentoDAO();
+        Equipamento equipamento = new Equipamento();
+        int codigo = Integer.parseInt(jTextFieldCodEquipamento.getText());
+        try {
+            equipamento = funcaoEquipamento.buscaEquipamentoCodigo(codigo);
+            jTextFieldNomeEquipamento.setText(equipamento.getNome());
+            jTextFieldQtdEstoque.setText(String.valueOf(equipamento.getQtdEstoque()));            
+            jTextFieldPrecoVenda.setText(String.valueOf(equipamento.getPrecoVenda()));
+            jTextFieldPrecoCusto.setText(String.valueOf(equipamento.getPrecoCusto()));
+            jTextFieldModoOperacao.setText(equipamento.getModoOperacao());
+            jTextFieldNomeFornecedor.setText(equipamento.getFornecedor().getNome());
+      } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+
+    }//GEN-LAST:event_jButtonConsultaEquipamentoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -195,18 +258,20 @@ public class TelaConsultaEquipamento extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonConsulta;
+    private javax.swing.JButton jButtonConsultaEquipamento;
     private javax.swing.JButton jButtonLimpar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelCod;
     private javax.swing.JLabel jLabelModoOperacao;
+    private javax.swing.JLabel jLabelNomeEquipamento;
     private javax.swing.JLabel jLabelPrecoCusto;
     private javax.swing.JLabel jLabelQtdEstoque;
     private javax.swing.JLabel jLabelTítulo;
     private javax.swing.JPanel jPanelConsultaEquipamento;
     private javax.swing.JTextField jTextFieldCodEquipamento;
     private javax.swing.JTextField jTextFieldModoOperacao;
+    private javax.swing.JTextField jTextFieldNomeEquipamento;
     private javax.swing.JTextField jTextFieldNomeFornecedor;
     private javax.swing.JTextField jTextFieldPrecoCusto;
     private javax.swing.JTextField jTextFieldPrecoVenda;
