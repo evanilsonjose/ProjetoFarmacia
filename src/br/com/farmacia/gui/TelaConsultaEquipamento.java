@@ -62,19 +62,11 @@ public class TelaConsultaEquipamento extends javax.swing.JFrame {
 
         jLabelQtdEstoque.setText("Quantidade em estoque:");
 
-        jTextFieldQtdEstoque.setEditable(false);
-
         jLabel3.setText("Custo de Venda:");
-
-        jTextFieldPrecoVenda.setEditable(false);
 
         jLabelPrecoCusto.setText("Preço de Custo:");
 
-        jTextFieldPrecoCusto.setEditable(false);
-
         jLabelModoOperacao.setText("Modo de Opreração:");
-
-        jTextFieldModoOperacao.setEditable(false);
 
         jButtonConsultaEquipamento.setText("Consultar");
         jButtonConsultaEquipamento.addActionListener(new java.awt.event.ActionListener() {
@@ -84,8 +76,6 @@ public class TelaConsultaEquipamento extends javax.swing.JFrame {
         });
 
         jLabel1.setText("Nome do Fornecedor:");
-
-        jTextFieldNomeFornecedor.setEditable(false);
 
         jLabelNomeEquipamento.setText("Nome do equipamento:");
 

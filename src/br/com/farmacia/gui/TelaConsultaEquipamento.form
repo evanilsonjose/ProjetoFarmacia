@@ -174,9 +174,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldQtdEstoque">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
@@ -184,9 +181,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldPrecoVenda">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelPrecoCusto">
           <Properties>
@@ -194,9 +188,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldPrecoCusto">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelModoOperacao">
           <Properties>
@@ -204,9 +195,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldModoOperacao">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonConsultaEquipamento">
           <Properties>
@@ -222,9 +210,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldNomeFornecedor">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelNomeEquipamento">
           <Properties>
