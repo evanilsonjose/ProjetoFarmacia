@@ -8,16 +8,16 @@ public class Sql {
     public static final String ALTERAR_CLIENTE = "UPDATE cliente SET nome_cliente = ?, rg_cliente = ?, cpf_cliente = ?, datanasc_cliente = ?, endereco_cliente = ?, telefone_cliente = ? WHERE cod_cliente = ?";
     public static final String BUSCAR_CLIENTE_CODIGO = "SELECT cod_cliente, nome_cliente, rg_cliente, cpf_cliente, DATE_FORMAT(datanasc_cliente, '%d/%m/%Y') datanasc_cliente, endereco_cliente, telefone_cliente FROM cliente WHERE cod_cliente = ?";
     public static final String BUSCAR_CLIENTE_CPF = "SELECT cod_cliente, nome_cliente, rg_cliente, cpf_cliente, DATE_FORMAT(datanasc_cliente, '%d/%m/%Y') datanasc_cliente, endereco_cliente, telefone_cliente FROM cliente WHERE cpf_cliente = ?";
-    public static final String LISTAR_CLIENTE = "SELECT cod_cliente, nome_cliente, rg_cliente, cpf_cliente, datanasc_cliente, endereco_cliente, telefone_cliente FROM cliente ORDER BY nome_cliente ASC";
+    public static final String LISTAR_CLIENTE = "SELECT cod_cliente, nome_cliente, rg_cliente, cpf_cliente, DATE_FORMAT(datanasc_cliente, '%d/%m/%Y') datanasc_cliente, endereco_cliente, telefone_cliente FROM cliente ORDER BY nome_cliente ASC";
     // fim - query cliente
 
     // inicio - query funcionario
     public static final String INSERE_FUNCIONARIO = "INSERT INTO funcionario (nome_funcionario, rg_funcionario, cpf_funcionario, datanasc_funcionario, endereco_funcionario, telefone_funcionario, funcao_funcionario, salario_funcionario) VALUES (?,?,?,?,?,?,?,?)";
     public static final String REMOVE_FUNCIONARIO = "DELETE FROM funcionario WHERE cod_funcionario = ?";
     public static final String ALTERAR_FUNCIONARIO = "UPDATE funcionario SET nome_funcionario = ?, rg_funcionario = ?, cpf_funcionario = ?, datanasc_funcionario = ?, endereco_funcionario = ?, telefone_funcionario = ?, funcao_funcionario = ?, salario_funcionario = ? WHERE cod_funcionario = ?";
-    public static final String BUSCAR_FUNCIONARIO_CODIGO = "SELECT cod_funcionario, nome_funcionario, rg_funcionario, cpf_funcionario, datanasc_funcionario, endereco_funcionario, telefone_funcionario, funcao_funcionario, salario_funcionario FROM funcionario WHERE cod_funcionario = ?";
-    public static final String BUSCAR_FUNCIONARIO_CPF = "SELECT cod_funcionario, nome_funcionario, rg_funcionario, cpf_funcionario, datanasc_funcionario, endereco_funcionario, telefone_funcionario, funcao_funcionario, salario_funcionario FROM funcionario WHERE cpf_funcionario = ?";
-    public static final String LISTAR_FUNCIONARIO = "SELECT cod_funcionario, nome_funcionario, rg_funcionario, cpf_funcionario, datanasc_funcionario, endereco_funcionario, telefone_funcionario, funcao_funcionario, salario_funcionario FROM funcionario";
+    public static final String BUSCAR_FUNCIONARIO_CODIGO = "SELECT cod_funcionario, nome_funcionario, rg_funcionario, cpf_funcionario, DATE_FORMAT(datanasc_funcionario, '%d/%m/%Y') datanasc_funcionario, endereco_funcionario, telefone_funcionario, funcao_funcionario, salario_funcionario FROM funcionario WHERE cod_funcionario = ?";
+    public static final String BUSCAR_FUNCIONARIO_CPF = "SELECT cod_funcionario, nome_funcionario, rg_funcionario, cpf_funcionario, DATE_FORMAT(datanasc_funcionario, '%d/%m/%Y') datanasc_funcionario, endereco_funcionario, telefone_funcionario, funcao_funcionario, salario_funcionario FROM funcionario WHERE cpf_funcionario = ?";
+    public static final String LISTAR_FUNCIONARIO = "SELECT cod_funcionario, nome_funcionario, rg_funcionario, cpf_funcionario, DATE_FORMAT(datanasc_funcionario, '%d/%m/%Y') datanasc_funcionario, endereco_funcionario, telefone_funcionario, funcao_funcionario, salario_funcionario FROM funcionario";
     // fim - query funcionario
 
     // inicio - query fornecedor
