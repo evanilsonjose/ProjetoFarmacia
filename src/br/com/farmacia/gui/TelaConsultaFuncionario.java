@@ -57,7 +57,7 @@ public class TelaConsultaFuncionario extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jComboBoxCodigoCpf.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Código", "CPF", " " }));
+        jComboBoxCodigoCpf.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Código", "CPF" }));
         jComboBoxCodigoCpf.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBoxCodigoCpfItemStateChanged(evt);
