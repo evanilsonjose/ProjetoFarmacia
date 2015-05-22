@@ -5,6 +5,9 @@
  */
 package br.com.farmacia.gui;
 
+import br.com.farmacia.beans.Funcionario;
+import br.com.farmacia.dao.FuncionarioDAO;
+
 /**
  *
  * @author Evanilson
@@ -27,22 +30,258 @@ public class TelaConsultaFuncionario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jComboBoxCodigoCpf = new javax.swing.JComboBox();
+        jTextFieldCodigoCpfFuncionario = new javax.swing.JTextField();
+        jLabelNomeFuncionario = new javax.swing.JLabel();
+        jTextFieldNomeFuncionario = new javax.swing.JTextField();
+        jLabelRgFuncionario = new javax.swing.JLabel();
+        jTextFieldRgFuncionario = new javax.swing.JTextField();
+        jLabelCpfFuncionario = new javax.swing.JLabel();
+        jTextFieldCpfFuncionario = new javax.swing.JTextField();
+        jLabelDataNascFuncionario = new javax.swing.JLabel();
+        jTextFieldDataNascFuncionario = new javax.swing.JTextField();
+        jLabelEndereçoFuncionario = new javax.swing.JLabel();
+        jTextFieldEnderecoFuncionario = new javax.swing.JTextField();
+        jLabelTelefoneFuncionario = new javax.swing.JLabel();
+        jTextFieldTelefoneFuncionario = new javax.swing.JTextField();
+        jLabelFuncaoFuncionario = new javax.swing.JLabel();
+        jTextFieldFuncaoFuncionario = new javax.swing.JTextField();
+        jLabelSalarioFuncionario = new javax.swing.JLabel();
+        jTextFieldSalarioFuncionario = new javax.swing.JTextField();
+        jButtonCancelarFuncionario = new javax.swing.JButton();
+        jButtonConsultarFuncionario = new javax.swing.JButton();
+        jLabelConsultadeFuncionario = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jComboBoxCodigoCpf.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Código", "CPF", " " }));
+        jComboBoxCodigoCpf.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBoxCodigoCpfItemStateChanged(evt);
+            }
+        });
+
+        jLabelNomeFuncionario.setText("Nome:");
+
+        jTextFieldNomeFuncionario.setEditable(false);
+
+        jLabelRgFuncionario.setText("RG:");
+
+        jTextFieldRgFuncionario.setEditable(false);
+
+        jLabelCpfFuncionario.setText("CPF:");
+
+        jTextFieldCpfFuncionario.setEditable(false);
+
+        jLabelDataNascFuncionario.setText("Data de Nascimento:");
+
+        jTextFieldDataNascFuncionario.setEditable(false);
+
+        jLabelEndereçoFuncionario.setText("Endereço:");
+
+        jTextFieldEnderecoFuncionario.setEditable(false);
+
+        jLabelTelefoneFuncionario.setText("Talefone:");
+
+        jTextFieldTelefoneFuncionario.setEditable(false);
+
+        jLabelFuncaoFuncionario.setText("Função:");
+
+        jTextFieldFuncaoFuncionario.setEditable(false);
+        jTextFieldFuncaoFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldFuncaoFuncionarioActionPerformed(evt);
+            }
+        });
+
+        jLabelSalarioFuncionario.setText("Salario:");
+
+        jTextFieldSalarioFuncionario.setEditable(false);
+
+        jButtonCancelarFuncionario.setText("Cancelar");
+
+        jButtonConsultarFuncionario.setText("Consultar");
+        jButtonConsultarFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConsultarFuncionarioActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jComboBoxCodigoCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelDataNascFuncionario)
+                            .addComponent(jLabelCpfFuncionario)
+                            .addComponent(jLabelRgFuncionario)
+                            .addComponent(jLabelNomeFuncionario)
+                            .addComponent(jLabelEndereçoFuncionario)
+                            .addComponent(jLabelTelefoneFuncionario)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabelSalarioFuncionario)
+                                .addComponent(jLabelFuncaoFuncionario)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jTextFieldNomeFuncionario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+                            .addComponent(jTextFieldEnderecoFuncionario, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldFuncaoFuncionario, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldCodigoCpfFuncionario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldRgFuncionario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCpfFuncionario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldDataNascFuncionario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldTelefoneFuncionario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldSalarioFuncionario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(291, 291, 291))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButtonCancelarFuncionario)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonConsultarFuncionario)
+                        .addGap(70, 70, 70)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBoxCodigoCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldCodigoCpfFuncionario))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelNomeFuncionario)
+                    .addComponent(jTextFieldNomeFuncionario))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelRgFuncionario)
+                    .addComponent(jTextFieldRgFuncionario))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelCpfFuncionario)
+                    .addComponent(jTextFieldCpfFuncionario))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelDataNascFuncionario)
+                    .addComponent(jTextFieldDataNascFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelEndereçoFuncionario)
+                    .addComponent(jTextFieldEnderecoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabelTelefoneFuncionario)
+                    .addComponent(jTextFieldTelefoneFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelFuncaoFuncionario)
+                    .addComponent(jTextFieldFuncaoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelSalarioFuncionario)
+                    .addComponent(jTextFieldSalarioFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(63, 63, 63)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonCancelarFuncionario)
+                    .addComponent(jButtonConsultarFuncionario))
+                .addGap(20, 20, 20))
+        );
+
+        jComboBoxCodigoCpf.getAccessibleContext().setAccessibleName("Código");
+
+        jLabelConsultadeFuncionario.setText("Consulta de Funcionario");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(247, 247, 247)
+                        .addComponent(jLabelConsultadeFuncionario))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelConsultadeFuncionario)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextFieldFuncaoFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldFuncaoFuncionarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldFuncaoFuncionarioActionPerformed
+
+    private void jButtonConsultarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultarFuncionarioActionPerformed
+       String opcaoConsulta = jComboBoxCodigoCpf.getSelectedItem().toString();
+        if (opcaoConsulta.equals("Código")) {
+            Funcionario funcionario = new Funcionario();
+            FuncionarioDAO funcaoFuncionario = new FuncionarioDAO();
+            try {
+                funcionario = funcaoFuncionario.buscaFuncionarioCodigo(Integer.parseInt(jTextFieldCodigoCpfFuncionario.getText()));
+                jTextFieldNomeFuncionario.setText(funcionario.getNome());
+                jTextFieldRgFuncionario.setText(funcionario.getRG());
+                jTextFieldCpfFuncionario.setText(funcionario.getCPF());
+                jTextFieldDataNascFuncionario.setText(funcionario.getDataNasc());
+                jTextFieldEnderecoFuncionario.setText(funcionario.getEndereco());
+                jTextFieldTelefoneFuncionario.setText(funcionario.getTelefone());
+                jTextFieldFuncaoFuncionario.setText(funcionario.getFuncao());
+                jTextFieldSalarioFuncionario.setText(String.valueOf(funcionario.getSalario()));
+                
+            } catch (Exception e) {
+                System.err.println(e.getMessage());
+            }
+        } else {
+            Funcionario funcionario = new Funcionario();
+            FuncionarioDAO funcaoFuncionario = new FuncionarioDAO();
+            try {
+                funcionario = funcaoFuncionario.buscaFuncionarioCpf(jTextFieldCodigoCpfFuncionario.getText());
+                jTextFieldNomeFuncionario.setText(funcionario.getNome());
+                jTextFieldRgFuncionario.setText(funcionario.getRG());
+                jTextFieldCpfFuncionario.setText(funcionario.getCPF());
+                jTextFieldDataNascFuncionario.setText(funcionario.getDataNasc());
+                jTextFieldEnderecoFuncionario.setText(funcionario.getEndereco());
+                jTextFieldTelefoneFuncionario.setText(funcionario.getTelefone());
+                jTextFieldFuncaoFuncionario.setText(funcionario.getFuncao());
+                jTextFieldSalarioFuncionario.setText(String.valueOf(funcionario.getSalario()));
+                
+            } catch (Exception e) {
+                System.err.println(e.getMessage());
+            }
+        }  // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonConsultarFuncionarioActionPerformed
+
+    private void jComboBoxCodigoCpfItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxCodigoCpfItemStateChanged
+        // TODO add your handling code here:
+        jTextFieldCodigoCpfFuncionario.setText("");
+        jTextFieldNomeFuncionario.setText("");
+        jTextFieldRgFuncionario.setText("");
+        jTextFieldCpfFuncionario.setText("");
+        jTextFieldDataNascFuncionario.setText("");
+        jTextFieldEnderecoFuncionario.setText("");
+        jTextFieldTelefoneFuncionario.setText("");
+        jTextFieldFuncaoFuncionario.setText("");
+        jTextFieldSalarioFuncionario.setText("");
+    }//GEN-LAST:event_jComboBoxCodigoCpfItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -80,5 +319,27 @@ public class TelaConsultaFuncionario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonCancelarFuncionario;
+    private javax.swing.JButton jButtonConsultarFuncionario;
+    private javax.swing.JComboBox jComboBoxCodigoCpf;
+    private javax.swing.JLabel jLabelConsultadeFuncionario;
+    private javax.swing.JLabel jLabelCpfFuncionario;
+    private javax.swing.JLabel jLabelDataNascFuncionario;
+    private javax.swing.JLabel jLabelEndereçoFuncionario;
+    private javax.swing.JLabel jLabelFuncaoFuncionario;
+    private javax.swing.JLabel jLabelNomeFuncionario;
+    private javax.swing.JLabel jLabelRgFuncionario;
+    private javax.swing.JLabel jLabelSalarioFuncionario;
+    private javax.swing.JLabel jLabelTelefoneFuncionario;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextFieldCodigoCpfFuncionario;
+    private javax.swing.JTextField jTextFieldCpfFuncionario;
+    private javax.swing.JTextField jTextFieldDataNascFuncionario;
+    private javax.swing.JTextField jTextFieldEnderecoFuncionario;
+    private javax.swing.JTextField jTextFieldFuncaoFuncionario;
+    private javax.swing.JTextField jTextFieldNomeFuncionario;
+    private javax.swing.JTextField jTextFieldRgFuncionario;
+    private javax.swing.JTextField jTextFieldSalarioFuncionario;
+    private javax.swing.JTextField jTextFieldTelefoneFuncionario;
     // End of variables declaration//GEN-END:variables
 }
